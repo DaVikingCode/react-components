@@ -5,7 +5,7 @@ import MapButton from '../components/MapButton';
 import AppIcon from '../components/AppIcon';
 
 export default {
-    title: 'Example/MapButton',
+    title: 'Components/MapButton',
     component: MapButton,
 } as ComponentMeta<typeof MapButton>;
 

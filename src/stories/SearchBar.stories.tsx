@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar';
 import { AppBar, Box, FormControlLabel, FormGroup, Switch, Toolbar, Typography } from '@material-ui/core';
 
 export default {
-  title: 'Example/SearchBar',
+  title: 'Components/SearchBar',
   component: SearchBar,
 } as ComponentMeta<typeof SearchBar>;
 

@@ -1,33 +1,31 @@
-import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
-import postcss from "rollup-plugin-postcss";
 import del from 'rollup-plugin-delete';
-
-import packageJson from "./package.json";
+import svgr from '@svgr/rollup';
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {
-    input: "./src/index.ts",
-    output: [
-        {
-            file: packageJson.main,
-            format: "cjs",
-            sourcemap: true
+export default [
+    // CommonJS
+    {
+        input: 'src/index.ts',
+        output: {
+            dir: './',
+            entryFileNames: 'lib/cjs/index.js',
+            format: 'cjs',
         },
-        {
-            file: packageJson.module,
-            format: "esm",
-            sourcemap: true
-        }
-    ],
-    plugins: [
-        del({ targets: 'lib/*' }),
-        peerDepsExternal(),
-        resolve(),
-        commonjs(),
-        typescript(),
-        postcss(),
-    ]
-};
+        plugins: [
+            del({ targets: 'lib/*' }),
+            typescript({
+                tsconfig: './tsconfig.lib.json',
+                declaration: true,
+                declarationDir: 'types/',
+                rootDir: 'src/',
+                noEmit: true
+            }),
+            peerDepsExternal(),
+            resolve(),
+            svgr()
+        ]
+    },
+]

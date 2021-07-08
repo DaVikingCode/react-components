@@ -13,7 +13,7 @@ const Icon = styled(MdiIcon)<IconProps>`
     font-size: ${p => p.size};
 `;
 
-const AppIcon: FC<{ name: string } & IconProps & MdiIconProps>
+export const AppIcon: FC<{ name: string } & IconProps & MdiIconProps>
     = ({ name, className, size = '24px', ...rest }) =>
         <Icon
             {...rest}

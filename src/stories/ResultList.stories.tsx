@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ResultList from '../components/ResultList';
 
 export default {
-  title: 'Example/ResultList',
+  title: 'Components/ResultList',
   component: ResultList,
 } as ComponentMeta<typeof ResultList>;
 

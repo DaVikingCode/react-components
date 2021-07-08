@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 import ResultList from '../components/ResultList';
 
 export default {
-  title: 'Example/Sidebar',
+  title: 'Components/Sidebar',
   component: Sidebar,
 } as ComponentMeta<typeof Sidebar>;
 

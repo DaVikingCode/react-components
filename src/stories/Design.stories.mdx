@@ -1,0 +1,149 @@
+import { Typography, Card, CardContent, Tab } from '@material-ui/core';
+import { DvcThemeProvider } from '../components';
+import Colors from './Colors';
+
+<Meta title="Documentation/Design" />
+
+# Design
+
+Pour des raisons de simplicité le design se base sur [material-ui](https://material-ui.com/). Il s'agit d'une implémentation en React du design system de Google, material.  
+Les [guidelines de material](https://material.io/design/) sont donc applicables.
+
+## Thème
+
+Toute l'application React doit être contenu dans le composant `DvcThemeProvider` qui définit le thème material-ui. Voir [ThemeProvider](https://material-ui.com/customization/theming/#theme-provider).
+
+```jsx
+import React, { FC } from 'react';
+import { DvcThemeProvider } from 'dvc-components';
+
+const App: FC = () => <DvcThemeProvider>
+    <>Le reste de l'application...</>
+</DvcThemeProvider>;
+```
+
+## Typographie
+
+La police à utiliser est Ubuntu : https://fonts.google.com/specimen/Ubuntu.  
+L'échelle typograpgique est celle de material : https://material.io/design/typography/the-type-system.html#type-scale.  
+
+Le composant [Typography](https://material-ui.com/components/typography/) de material-ui permet de respecter cette échelle dans la partie React.
+
+
+<DvcThemeProvider>
+    <Card variant="outlined">
+        <CardContent style={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography gutterBottom variant="h1">Header 1</Typography>
+            <Typography gutterBottom variant="h2">Header 2</Typography>
+            <Typography gutterBottom variant="h3">Header 3</Typography>
+            <Typography gutterBottom variant="h4">Header 4</Typography>
+            <Typography gutterBottom variant="h5">Header 5</Typography>
+            <Typography gutterBottom variant="h6">Header 6</Typography>
+            <Typography gutterBottom variant="subtitle1">Subtitle 1</Typography>
+            <Typography gutterBottom variant="subtitle2">Subtitle 2</Typography>
+            <Typography gutterBottom variant="body1">Body 1</Typography>
+            <Typography gutterBottom variant="body2">Body 2</Typography>
+            <Typography gutterBottom variant="button">BUTTON</Typography>
+            <Typography gutterBottom variant="caption">Caption</Typography>
+            <Typography variant="overline">Overline</Typography>
+        </CardContent>
+    </Card>
+</DvcThemeProvider>
+
+
+## Couleurs
+
+La palette se décline en 12 couleurs, dont les deux premières sont la couleur primaire, et la couleur secondaire.
+
+### Utilisation
+
+Il faut privilégier l'utilisation des variables css au code hexadécimal, si possible.  
+Le css permettant de déclarer ces variables est accessible [plus bas](#variables-css).
+
+```css
+button {
+    /* Priviliégiez les variables */
+    color: var(--clr-primary);
+    /* Plutôt que le code hexa */
+    color: #005fb8;
+}
+```
+
+### Palette
+
+> Vous pouvez copier chaque couleur en cliquant dessus.
+
+<DvcThemeProvider>
+    <Colors colors={[
+        'primary', 
+        'secondary', 
+        'green', 
+        'blue-green', 
+        'blue', 
+        'yellow', 
+        'orange', 
+        'red', 
+        'violet', 
+        'brown', 
+        'grey', 
+        'light-grey'
+        ]} 
+    />
+</DvcThemeProvider>
+
+### Variables css
+
+```css
+:root {
+    --clr-primary: #005fb8;
+    --clr-primary-50: #7faedb;
+    --clr-primary-25: #bfd7ed;
+
+    --clr-secondary: #93c90e;
+    --clr-secondary-50: #c9e486;
+    --clr-secondary-25: #e4f2c2;
+
+    --clr-blue-green: #00b2a9;
+    --clr-blue-green-50: #7fd8d4;
+    --clr-blue-green-25: #bfece9;
+
+    --clr-red: #ef426f;
+    --clr-red-50: #f7a0b6;
+    --clr-red-25: #fbcfdb;
+
+    --clr-blue: #00a3e0;
+    --clr-blue-50: #7fd1ef;
+    --clr-blue-25: #bfe8f7;
+
+    --clr-green: #4aa23f;
+    --clr-green-50: #a4d09e;
+    --clr-green-25: #d1e8ce;
+
+    --clr-yellow: #eaaa00;
+    --clr-yellow-50: #f4d47f;
+    --clr-yellow-25: #faeabf;
+
+    --clr-brown: #a39382;
+    --clr-brown-50: #d1c9c0;
+    --clr-brown-25: #e8e4e0;
+
+    --clr-orange: #e63b11;
+    --clr-orange-50: #f29c87;
+    --clr-orange-25: #f9cdc3;
+
+    --clr-violet: #994878;
+    --clr-violet-50: #cca3bb;
+    --clr-violet-25: #e5d1dd;
+
+    --clr-grey: #688197;
+    --clr-grey-50: #b3c0cb;
+    --clr-grey-25: #d9dfe5;
+
+    --clr-light-grey: #98a4ae;
+    --clr-light-grey-50: #cbd1d6;
+    --clr-light-grey-25: #e5e8eb;
+
+    --clr-white: #fff;
+    --clr-black: #000;
+}
+```
