@@ -39,7 +39,7 @@ export interface ResultListProps {
     Results: React.ReactNodeArray;
 }
 
-const ResultList: FC<ResultListProps> = ({ loading, Results }) => {
+export const ResultList: FC<ResultListProps> = ({ loading, Results }) => {
     if (loading) {
         return <SplashHint Img={DataLoadingIcon} headline={'Veuillez patienter...'} subline={"Les données chargent."} />;
     }

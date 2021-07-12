@@ -36,7 +36,7 @@ export interface SidebarProps {
     onClose: Function;
 }
 
-const Sidebar: FC<SidebarProps> = ({ children, title, onClose, open = false, ...props }) => {
+export const Sidebar: FC<SidebarProps> = ({ children, title, onClose, open = false, ...props }) => {
     return <SidebarWrapper closed={!open} {...props}>
         <Header>
             <Typography variant="overline">

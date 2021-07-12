@@ -72,7 +72,7 @@ export interface SearchBarProps extends InputBaseProps {
     FilterForm?: React.ReactNode;
 }
 
-const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(({ onClear, FilterForm, defaultValue, ...props }, ref) => {
+export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(({ onClear, FilterForm, defaultValue, ...props }, ref) => {
     const [searchEmpty, setSearchEmpty] = useState(() => !defaultValue || defaultValue === '');
     const inputRef = useRef<HTMLInputElement>(null);
 
