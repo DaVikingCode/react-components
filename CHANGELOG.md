@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/DaVikingCode/react-components/compare/v1.0.2...v1.0.3) (2021-07-12)
+
+
+### Bug Fixes
+
+* build library before pushing... ([48a71c9](https://github.com/DaVikingCode/react-components/commit/48a71c956b16fbefca5f1880c1f67e846365fa04))
+
 ## [1.0.2](https://github.com/DaVikingCode/react-components/compare/v1.0.1...v1.0.2) (2021-07-12)
 
 
