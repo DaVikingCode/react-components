@@ -30,7 +30,7 @@ export interface MapButtonProps {
     children: React.ReactNode;
 }
 
-const MapButton = React.forwardRef<HTMLButtonElement, MapButtonProps>(({ children, tooltip, ...props }, ref) => {
+export const MapButton = React.forwardRef<HTMLButtonElement, MapButtonProps>(({ children, tooltip, ...props }, ref) => {
     return <Tooltip title={tooltip} enterDelay={200}>
         <MapButtonWrapper ref={ref} {...props}>{children}</MapButtonWrapper>
     </Tooltip>
