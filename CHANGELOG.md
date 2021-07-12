@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/DaVikingCode/react-components/compare/v1.0.1...v1.0.2) (2021-07-12)
+
+
+### Bug Fixes
+
+* export for MapButton ([4cb88fd](https://github.com/DaVikingCode/react-components/commit/4cb88fd997050e974a494b752e32497d953eefa0))
+
 ## [1.0.1](https://github.com/DaVikingCode/react-components/compare/v1.0.0...v1.0.1) (2021-07-12)
 
 
