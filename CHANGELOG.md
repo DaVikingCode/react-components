@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/DaVikingCode/react-components/compare/v1.0.3...v1.0.4) (2021-07-15)
+
+
+### Bug Fixes
+
+* correctly forward button props ([8580892](https://github.com/DaVikingCode/react-components/commit/85808927a11cf7a91245dbc56434b4bfef5d1c75))
+
 ## [1.0.3](https://github.com/DaVikingCode/react-components/compare/v1.0.2...v1.0.3) (2021-07-12)
 
 
