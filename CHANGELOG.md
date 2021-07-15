@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/DaVikingCode/react-components/compare/v1.1.0...v1.1.1) (2021-07-15)
+
+
+### Bug Fixes
+
+* extract splash component ([9a3cff3](https://github.com/DaVikingCode/react-components/commit/9a3cff3e9948f4cdac508e8f6cc31ced047935c8))
+
 # [1.1.0](https://github.com/DaVikingCode/react-components/compare/v1.0.4...v1.1.0) (2021-07-15)
 
 
