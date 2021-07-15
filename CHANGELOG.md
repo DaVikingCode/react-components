@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/DaVikingCode/react-components/compare/v1.1.1...v1.1.2) (2021-07-15)
+
+
+### Bug Fixes
+
+* **sidebar:** correctly call onclose event ([bb66f30](https://github.com/DaVikingCode/react-components/commit/bb66f300c446f49e3c3f2ec9390c7b0769d5ca1b))
+
 ## [1.1.1](https://github.com/DaVikingCode/react-components/compare/v1.1.0...v1.1.1) (2021-07-15)
 
 
