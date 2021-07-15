@@ -25,14 +25,15 @@ const MapButtonWrapper = styled.button`
     }
 `;
 
-export interface MapButtonProps {
+export type MapButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     tooltip: string;
-    children: React.ReactNode;
 }
 
 export const MapButton = React.forwardRef<HTMLButtonElement, MapButtonProps>(({ children, tooltip, ...props }, ref) => {
     return <Tooltip title={tooltip} enterDelay={200}>
-        <MapButtonWrapper ref={ref} {...props}>{children}</MapButtonWrapper>
+        <MapButtonWrapper ref={ref} {...props}>
+            {children}
+        </MapButtonWrapper>
     </Tooltip>
 });
 
