@@ -33,7 +33,7 @@ const SidebarWrapper = styled.aside<{ closed: boolean }>`
 export interface SidebarProps {
     open: boolean;
     title: string;
-    onClose: Function;
+    onClose: () => void;
 }
 
 export const Sidebar: FC<SidebarProps> = ({ children, title, onClose, open = false, ...props }) => {
@@ -45,7 +45,7 @@ export const Sidebar: FC<SidebarProps> = ({ children, title, onClose, open = fal
             <IconButton
                 style={{ width: '40px', height: '40px' }}
                 size="small"
-                onClick={onClose()}
+                onClick={onClose}
             >
                 <AppIcon name='chevron-left' />
             </IconButton>
