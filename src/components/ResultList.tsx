@@ -1,8 +1,6 @@
 import { Divider } from "@material-ui/core";
 import React, { FC } from "react";
 import styled from "styled-components";
-import NoResultIcon from '../assets/no_result.svg';
-import DataLoadingIcon from '../assets/data_loading.svg';
 
 const ActualResultListWrapper = styled.ul`
     list-style: none;
@@ -14,12 +12,14 @@ const ActualResultListWrapper = styled.ul`
     }
 `;
 
-const ActualResultList: FC<{ Results: React.ReactNodeArray }> = ({ Results }) => <ActualResultListWrapper>{
-    Results.map((Result, i) => <li key={i}>
-        {Result}
-        {i !== (Results.length - 1) && <Divider />}
-    </li>)
-}</ActualResultListWrapper>;
+const ActualResultList: FC<{ Results: React.ReactNodeArray }> = ({ Results }) => (
+    <ActualResultListWrapper>{
+        Results.map((Result, i) => <li key={i}>
+            {Result}
+            <Divider />
+        </li>)
+    }</ActualResultListWrapper>
+);
 
 export interface ResultListProps {
     children?: undefined;
