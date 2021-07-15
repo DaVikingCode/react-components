@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/DaVikingCode/react-components/compare/v1.1.2...v1.1.3) (2021-07-15)
+
+
+### Bug Fixes
+
+* **result-list:** add divider after each result ([6e7ec35](https://github.com/DaVikingCode/react-components/commit/6e7ec350d2defe82cade40b093669b5dc4556057))
+
 ## [1.1.2](https://github.com/DaVikingCode/react-components/compare/v1.1.1...v1.1.2) (2021-07-15)
 
 
