@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/DaVikingCode/react-components/compare/v1.0.4...v1.1.0) (2021-07-15)
+
+
+### Features
+
+* **MapButton:** add css variables ([1ec7c95](https://github.com/DaVikingCode/react-components/commit/1ec7c952da0b9e28b973abab6d0e356cfe091b3c))
+
 ## [1.0.4](https://github.com/DaVikingCode/react-components/compare/v1.0.3...v1.0.4) (2021-07-15)
 
 
