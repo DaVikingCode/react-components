@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/DaVikingCode/react-components/compare/v1.1.3...v1.2.0) (2021-08-03)
+
+
+### Bug Fixes
+
+* autocomplete deps ([81cc52b](https://github.com/DaVikingCode/react-components/commit/81cc52babcc4d14b9fcfa101a6ee9b5337ac94c4))
+
+
+### Features
+
+* autocomplete ([05dd516](https://github.com/DaVikingCode/react-components/commit/05dd51677db27b876d0a7cf655622e6973a1e3de))
+
 ## [1.1.3](https://github.com/DaVikingCode/react-components/compare/v1.1.2...v1.1.3) (2021-07-15)
 
 
