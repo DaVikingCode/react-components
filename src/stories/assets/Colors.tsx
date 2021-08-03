@@ -1,5 +1,5 @@
 import { Typography, Tooltip, ButtonBase, ButtonBaseProps } from "@material-ui/core";
-import { AppIcon } from '../components';
+import { AppIcon } from '../../components';
 import { FC, useState } from "react";
 import styled from "styled-components";
 
