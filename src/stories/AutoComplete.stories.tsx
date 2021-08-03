@@ -3,8 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Autocomplete, { AutocompleteProps } from '../components/Autocomplete';
 import './AutoComplete.css';
-import { alpha, FormControl, InputBase, InputLabel, TextField, withStyles } from '@material-ui/core';
-import { AutocompleteInputChangeReason } from '@material-ui/lab';
 
 export default {
     title: 'Components/AutoComplete',
@@ -76,43 +74,36 @@ function useSearchFn<T, Data = Array<T>, Response = any>(
     return asyncSearchFn;
 }
 
+// const [firstname, _setFirstname] = useState<string>('Aym');
+// const asyncSearchFn = useSearchFn<any[]>(
+//     value => ({
+//         input: `http://localhost/api/apigo/contact/search`,
+//         init: {
+//             body: JSON.stringify({
+//                 name: value,
+//                 firstname
+//             })
+//         }
+//     }),
+//     response => response.data.contacts
+// );
 
+// const entrepriseSearchFn = useSearchFn(
+//     value => ({
+//         input: `http://localhost/api/entreprises/filter_search`,
+//         init: {
+//             method: 'GET'
+//         }
+//     }),
+//     response => response.data
+// );
 
 
 const Template: ComponentStory<typeof Autocomplete> = (args: AutocompleteProps<any, any, any, any>) => {
-    // const [firstname, _setFirstname] = useState<string>('Aym');
-    // const asyncSearchFn = useSearchFn<any[]>(
-    //     value => ({
-    //         input: `http://localhost/api/apigo/contact/search`,
-    //         init: {
-    //             body: JSON.stringify({
-    //                 name: value,
-    //                 firstname
-    //             })
-    //         }
-    //     }),
-    //     response => response.data.contacts
-    // );
-
-    // const entrepriseSearchFn = useSearchFn(
-    //     value => ({
-    //         input: `http://localhost/api/entreprises/filter_search`,
-    //         init: {
-    //             method: 'GET'
-    //         }
-    //     }),
-    //     response => response.data
-    // );
-
     return <form style={{ maxWidth: '600px' }}>
-        <Autocomplete
-            {...args}
-
-        />
+        <Autocomplete {...args} />
     </form>;
 }
-
-
 
 const entreprises = [
     { nom: 'Da Viking Code', id: '1' },
@@ -123,6 +114,14 @@ const entreprises = [
 
 export const Default = Template.bind({});
 Default.args = {
+    label: "Entreprise",
+    asyncSearchFn: () => fakeApiLoad(entreprises),
+    renderOption: (option: any) => <> {option.nom} </>,
+    getOptionLabel: (option: any) => option.nom
+}
+
+export const Creatable = Template.bind({});
+Creatable.args = {
     label: "Entreprise",
     asyncSearchFn: () => fakeApiLoad(entreprises),
     renderOption: (option: any) => <> {option.nom} </>,
