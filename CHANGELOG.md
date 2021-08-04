@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/DaVikingCode/react-components/compare/v1.2.0...v1.2.1) (2021-08-04)
+
+
+### Bug Fixes
+
+* **build:** fix typescript emit ([c150408](https://github.com/DaVikingCode/react-components/commit/c1504082794c819e37888ef943ddd53d5228315f))
+
 # [1.2.0](https://github.com/DaVikingCode/react-components/compare/v1.1.3...v1.2.0) (2021-08-03)
 
 
