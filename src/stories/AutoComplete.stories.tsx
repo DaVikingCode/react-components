@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Autocomplete, { AutocompleteProps } from '../components/Autocomplete';
-import './AutoComplete.css';
+import './Autocomplete.css';
 
 export default {
     title: 'Components/AutoComplete',
@@ -101,6 +101,7 @@ function useSearchFn<T, Data = Array<T>, Response = any>(
 
 const Template: ComponentStory<typeof Autocomplete> = (args: AutocompleteProps<any, any, any, any>) => {
     return <form style={{ maxWidth: '600px' }}>
+        <label>{args.label}</label>
         <Autocomplete {...args} />
     </form>;
 }
@@ -120,13 +121,20 @@ Default.args = {
     getOptionLabel: (option: any) => option.nom
 }
 
-export const Creatable = Template.bind({});
-Creatable.args = {
-    label: "Entreprise",
-    asyncSearchFn: () => fakeApiLoad(entreprises),
-    renderOption: (option: any) => <> {option.nom} </>,
-    getOptionLabel: (option: any) => option.nom
-}
+// TODO: todo
+// export const Creatable = Template.bind({});
+// Creatable.args = {
+//     label: "Entreprise",
+//     asyncSearchFn: () => fakeApiLoad(entreprises),
+//     renderOption: (option: any) => <> {option.nom} </>,
+//     getOptionLabel: (option: any) => option.nom,
+//     filterOptions: (options, state) => (state.inputValue.length < 1)
+//         ? options
+//         : [
+//             ...options,
+//             'Create option: '
+//         ]
+// }
 
 export const Multiple = Template.bind({});
 Multiple.args = {
@@ -183,6 +191,7 @@ ComplexOption.args = {
 
 export const Synchronous = Template.bind({});
 Synchronous.args = {
+    label: "Synchronous",
     asyncSearchFn: () => fakeApiLoad(users, 0),
     renderOption: (option: any) => <UserOption user={option} />,
     getOptionLabel: (option: any) => UserOptionLabel({ user: option })

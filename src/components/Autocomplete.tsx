@@ -4,15 +4,6 @@ import { LinearProgress, TextField } from '@material-ui/core';
 import styled from 'styled-components';
 
 const BootstrapTextField = styled(TextField)`
-
-    & > label {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 200%;
-        margin: 0 0 0.5rem;
-        transform: translate(0, -32px) !important;
-    }
-
     & > .MuiInputBase-root {
         padding-top: 0;
         padding-bottom: 0;
@@ -76,10 +67,6 @@ export function Autocomplete<
             {...params}
             variant="outlined"
             InputLabelProps={{ shrink: true }}
-            label={(error)
-                ? `${label} - Une erreur est survenue`
-                : label
-            }
         >
         </BootstrapTextField>
         {(loading && focused && dirty) && <InputProgress />}
@@ -109,7 +96,6 @@ export function Autocomplete<
 
     return <MatAutoComplete
         {...props}
-        style={{ marginTop: '32px' }}
         size="small"
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
