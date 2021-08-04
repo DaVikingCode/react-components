@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "start": "npm run storybook",
-    "build": "rollup -c && tsc --p tsconfig.lib.json",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "rollup -c",
+    "build:esm": "tsc --p tsconfig.lib.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
