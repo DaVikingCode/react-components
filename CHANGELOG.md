@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/DaVikingCode/react-components/compare/v1.2.1...v1.2.2) (2021-08-04)
+
+
+### Bug Fixes
+
+* **autocomplete:** export component ([ea54eb8](https://github.com/DaVikingCode/react-components/commit/ea54eb8af02b5eac0900ca65b52e708a05d33546))
+
 ## [1.2.1](https://github.com/DaVikingCode/react-components/compare/v1.2.0...v1.2.1) (2021-08-04)
 
 
