@@ -58,7 +58,7 @@ export interface AutocompleteProps<
 
 type CancellablePromise<T> = Promise<T> & { cancel?: () => void };
 
-function Autocomplete<
+export function Autocomplete<
     Data,
     Multiple extends boolean | undefined,
     DisableClearable extends boolean | undefined,
