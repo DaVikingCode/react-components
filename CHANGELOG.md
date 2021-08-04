@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/DaVikingCode/react-components/compare/v1.2.2...v1.2.3) (2021-08-04)
+
+
+### Bug Fixes
+
+* **autocomplete:** remove buggy label ([ad83de8](https://github.com/DaVikingCode/react-components/commit/ad83de8d5bf329cacffb4a0ff3da7a10de20efcc))
+
 ## [1.2.2](https://github.com/DaVikingCode/react-components/compare/v1.2.1...v1.2.2) (2021-08-04)
 
 
