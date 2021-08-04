@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Autocomplete, { AutocompleteProps } from '../components/Autocomplete';
@@ -18,86 +18,6 @@ async function fakeApiLoad<T>(data: T, delayMs: number = 2000) {
     await sleep(delayMs);
     return data;
 }
-
-const TokenContext = React.createContext<null | string>(null);
-function useToken() {
-    const [token, setToken] = useState<string | null>(null);
-
-    React.useEffect(() => {
-        fetch(`http://localhost/api/auth/token`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                email: 'superadmin@test-brg.fr',
-                password: 'secret',
-            }),
-        })
-            .then(response => response.json())
-            .then(data => setToken(data.auth_token));
-    }, []);
-
-    return token;
-}
-
-function useSearchFn<T, Data = Array<T>, Response = any>(
-    fn: (value: string) => { input: RequestInfo; init?: RequestInit },
-    keyFn?: (value: Response) => Data
-) {
-    const token = useToken();
-
-    const asyncSearchFn: (value: string) => Promise<Data> = React.useCallback(async (value) => {
-        if (!token || !value || value.length <= 2) {
-            return [] as unknown as Data;
-        }
-        const { input, init } = fn(value);
-        const request = await fetch(input, {
-            method: 'POST',
-            mode: 'cors',
-            credentials: 'omit',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                ...init?.headers
-            },
-            ...init
-        });
-        const data = (await request.json()) as Response;
-
-        return keyFn
-            ? keyFn(data)
-            : data as unknown as Data;
-    }, [token, fn]);
-
-    return asyncSearchFn;
-}
-
-// const [firstname, _setFirstname] = useState<string>('Aym');
-// const asyncSearchFn = useSearchFn<any[]>(
-//     value => ({
-//         input: `http://localhost/api/apigo/contact/search`,
-//         init: {
-//             body: JSON.stringify({
-//                 name: value,
-//                 firstname
-//             })
-//         }
-//     }),
-//     response => response.data.contacts
-// );
-
-// const entrepriseSearchFn = useSearchFn(
-//     value => ({
-//         input: `http://localhost/api/entreprises/filter_search`,
-//         init: {
-//             method: 'GET'
-//         }
-//     }),
-//     response => response.data
-// );
-
 
 const Template: ComponentStory<typeof Autocomplete> = (args: AutocompleteProps<any, any, any, any>) => {
     return <form style={{ maxWidth: '600px' }}>
@@ -120,21 +40,6 @@ Default.args = {
     renderOption: (option: any) => <> {option.nom} </>,
     getOptionLabel: (option: any) => option.nom
 }
-
-// TODO: todo
-// export const Creatable = Template.bind({});
-// Creatable.args = {
-//     label: "Entreprise",
-//     asyncSearchFn: () => fakeApiLoad(entreprises),
-//     renderOption: (option: any) => <> {option.nom} </>,
-//     getOptionLabel: (option: any) => option.nom,
-//     filterOptions: (options, state) => (state.inputValue.length < 1)
-//         ? options
-//         : [
-//             ...options,
-//             'Create option: '
-//         ]
-// }
 
 export const Multiple = Template.bind({});
 Multiple.args = {

@@ -34,6 +34,14 @@ const InputProgress = styled(LinearProgress)`
     left: 0;
 `;
 
+// Redecalare forwardRef
+declare module "react" {
+    function forwardRef<T, P = {}>(
+        render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+    ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
+}
+
+
 export interface AutocompleteProps<
     Data,
     Multiple extends boolean | undefined,
@@ -49,12 +57,15 @@ export interface AutocompleteProps<
 
 type CancellablePromise<T> = Promise<T> & { cancel?: () => void };
 
-export function Autocomplete<
+function AutocompleteInner<
     Data,
     Multiple extends boolean | undefined,
     DisableClearable extends boolean | undefined,
     FreeSolo extends boolean | undefined
->({ asyncSearchFn, label, ...props }: AutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>) {
+>(
+    { asyncSearchFn, label, ...props }: AutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>,
+    ref: React.ForwardedRef<unknown>
+) {
     const [inputValue, setInputValue] = React.useState('');
     const [options, setOptions] = React.useState<Data[]>([]);
     const [loading, setLoading] = React.useState(false);
@@ -97,6 +108,7 @@ export function Autocomplete<
     return <MatAutoComplete
         {...props}
         size="small"
+        ref={ref}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         inputValue={inputValue}
@@ -114,5 +126,7 @@ export function Autocomplete<
         renderInput={renderInput}
     />;
 }
+
+export const Autocomplete = React.forwardRef(AutocompleteInner);
 
 export default Autocomplete;
