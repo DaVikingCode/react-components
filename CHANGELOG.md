@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/DaVikingCode/react-components/compare/v1.2.3...v1.3.0) (2021-08-04)
+
+
+### Features
+
+* **autocomplete:** forward ref ([894a7e4](https://github.com/DaVikingCode/react-components/commit/894a7e45577dc87fa894ef253cff4269aa38b559))
+
 ## [1.2.3](https://github.com/DaVikingCode/react-components/compare/v1.2.2...v1.2.3) (2021-08-04)
 
 
