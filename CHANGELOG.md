@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/DaVikingCode/react-components/compare/v1.3.0...v1.4.0) (2021-08-09)
+
+
+### Features
+
+* **autocomplete:** add required attribute ([347eea5](https://github.com/DaVikingCode/react-components/commit/347eea5065fbecb1b4b5c0cf6ffc65d45b6774d8))
+
 # [1.3.0](https://github.com/DaVikingCode/react-components/compare/v1.2.3...v1.3.0) (2021-08-04)
 
 
