@@ -51,6 +51,7 @@ export interface AutocompleteProps<
     extends Omit<MatAutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>, 'options' | 'renderInput'> {
     asyncSearchFn: (value: string) => Promise<Data[]>;
     label: string;
+    required: boolean;
     options?: Data[];
     renderInput?: (params: AutocompleteRenderInputParams) => React.ReactNode;
 }
@@ -63,7 +64,7 @@ function AutocompleteInner<
     DisableClearable extends boolean | undefined,
     FreeSolo extends boolean | undefined
 >(
-    { asyncSearchFn, label, ...props }: AutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>,
+    { asyncSearchFn, label, required = false, ...props }: AutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>,
     ref: React.ForwardedRef<unknown>
 ) {
     const [inputValue, setInputValue] = React.useState('');
@@ -77,6 +78,7 @@ function AutocompleteInner<
         <BootstrapTextField
             {...params}
             variant="outlined"
+            required
             InputLabelProps={{ shrink: true }}
         >
         </BootstrapTextField>
