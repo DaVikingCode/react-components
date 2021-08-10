@@ -1,6 +1,6 @@
 import React from 'react';
 import { AutocompleteProps as MatAutocompleteProps, Autocomplete as MatAutoComplete, AutocompleteRenderInputParams } from '@material-ui/lab';
-import { LinearProgress, TextField } from '@material-ui/core';
+import { LinearProgress, TextField, TextFieldProps } from '@material-ui/core';
 import styled from 'styled-components';
 
 const BootstrapTextField = styled(TextField)`
@@ -51,7 +51,7 @@ export interface AutocompleteProps<
     extends Omit<MatAutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>, 'options' | 'renderInput'> {
     asyncSearchFn: (value: string) => Promise<Data[]>;
     label: string;
-    required: boolean;
+    TextFieldProps?: TextFieldProps;
     options?: Data[];
     renderInput?: (params: AutocompleteRenderInputParams) => React.ReactNode;
 }
@@ -64,7 +64,7 @@ function AutocompleteInner<
     DisableClearable extends boolean | undefined,
     FreeSolo extends boolean | undefined
 >(
-    { asyncSearchFn, label, required = false, ...props }: AutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>,
+    { asyncSearchFn, label, TextFieldProps, ...props }: AutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>,
     ref: React.ForwardedRef<unknown>
 ) {
     const [inputValue, setInputValue] = React.useState('');
@@ -77,8 +77,8 @@ function AutocompleteInner<
     const renderInput = (params: AutocompleteRenderInputParams) => <>
         <BootstrapTextField
             {...params}
+            {...TextFieldProps}
             variant="outlined"
-            required
             InputLabelProps={{ shrink: true }}
         >
         </BootstrapTextField>
