@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/DaVikingCode/react-components/compare/v1.5.0...v1.5.1) (2021-08-10)
+
+
+### Bug Fixes
+
+* **autocomplete:** change TextFieldProps for inputProps ([fceaca8](https://github.com/DaVikingCode/react-components/commit/fceaca8857fb377cbd108e0c6af317a4c5a6e613))
+
 # [1.5.0](https://github.com/DaVikingCode/react-components/compare/v1.4.0...v1.5.0) (2021-08-10)
 
 
