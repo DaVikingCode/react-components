@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/DaVikingCode/react-components/compare/v1.4.0...v1.5.0) (2021-08-10)
+
+
+### Features
+
+* **autocomplete:** accept full textfield props ([4139e3d](https://github.com/DaVikingCode/react-components/commit/4139e3dff8c67c8a9c19502e380b216c43de70a9))
+
 # [1.4.0](https://github.com/DaVikingCode/react-components/compare/v1.3.0...v1.4.0) (2021-08-09)
 
 
