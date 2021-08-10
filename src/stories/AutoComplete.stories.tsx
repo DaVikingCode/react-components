@@ -38,7 +38,10 @@ Default.args = {
     label: "Entreprise",
     asyncSearchFn: () => fakeApiLoad(entreprises),
     renderOption: (option: any) => <> {option.nom} </>,
-    getOptionLabel: (option: any) => option.nom
+    getOptionLabel: (option: any) => option.nom,
+    inputProps: {
+        name: 'entreprise',
+    }
 }
 
 export const Multiple = Template.bind({});
