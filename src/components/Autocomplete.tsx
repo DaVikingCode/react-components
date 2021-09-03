@@ -65,6 +65,7 @@ export interface AutocompleteProps<
   label: string;
   inputProps?: InputBaseComponentProps;
   options?: Data[];
+  waitingTime?: number;
   renderInput?: (params: AutocompleteRenderInputParams) => React.ReactNode;
 }
 
@@ -80,6 +81,7 @@ function AutocompleteInner<
     asyncSearchFn,
     label,
     inputProps,
+    waitingTime,
     ...props
   }: AutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>,
   ref: React.ForwardedRef<unknown>
@@ -108,7 +110,7 @@ function AutocompleteInner<
   );
 
   var debouncedSearch = useRef(
-    debounce(search, 500, {
+    debounce(search, waitingTime, {
       leading: true,
     })
   );
@@ -133,7 +135,7 @@ function AutocompleteInner<
           setLoading(false);
           if (firstloading) {
             setFirstLoading(false);
-            debouncedSearch.current = debounce(search, 500, {
+            debouncedSearch.current = debounce(search, waitingTime, {
               leading: false,
             });
           }
