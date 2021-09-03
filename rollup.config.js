@@ -13,6 +13,9 @@ export default [
             dir: './',
             entryFileNames: 'lib/cjs/index.js',
             format: 'cjs',
+            globals:{
+                'lodash': '_'
+            }
         },
         plugins: [
             del({ targets: 'lib/*' }),
@@ -26,6 +29,7 @@ export default [
             peerDepsExternal(),
             resolve(),
             svgr()
-        ]
+        ],
+        external: ['lodash']
     },
 ]

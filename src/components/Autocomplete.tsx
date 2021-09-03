@@ -11,7 +11,7 @@ import {
   TextFieldProps,
 } from "@material-ui/core";
 import styled from "styled-components";
-import { debounce } from "lodash";
+import _ from "lodash";
 import { useRef } from "react";
 
 const BootstrapTextField = styled(TextField)`
@@ -110,7 +110,7 @@ function AutocompleteInner<
   );
 
   var debouncedSearch = useRef(
-    debounce(search, waitingTime, {
+    _.debounce(search, waitingTime, {
       leading: true,
     })
   );
@@ -135,7 +135,7 @@ function AutocompleteInner<
           setLoading(false);
           if (firstloading) {
             setFirstLoading(false);
-            debouncedSearch.current = debounce(search, waitingTime, {
+            debouncedSearch.current = _.debounce(search, waitingTime, {
               leading: false,
             });
           }
