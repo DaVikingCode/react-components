@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/DaVikingCode/react-components/compare/v1.5.1...v1.6.0) (2021-09-03)
+
+
+### Bug Fixes
+
+* lodash depedency for autocomplete ([ee0a13e](https://github.com/DaVikingCode/react-components/commit/ee0a13e717125124f61dfb77ff8e17935e769546))
+* **autocomplete:** add waitime time as parameter ([106833e](https://github.com/DaVikingCode/react-components/commit/106833eab634a1b567accd2e7f6a5b10d751d640))
+
+
+### Features
+
+* **autocomplete:** add debounce (not parametable) ([aeb24be](https://github.com/DaVikingCode/react-components/commit/aeb24beb30a7c4a0d6b655d6a9ac6e5a34d8fbb4))
+
 ## [1.5.1](https://github.com/DaVikingCode/react-components/compare/v1.5.0...v1.5.1) (2021-08-10)
 
 
