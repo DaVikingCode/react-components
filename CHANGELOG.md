@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/DaVikingCode/react-components/compare/v1.6.0...v1.6.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* uppercase issue for the autocomplete css ([313cc4b](https://github.com/DaVikingCode/react-components/commit/313cc4be8f95b6ac4101ea68ae3d6c6d39d06f90))
+
 # [1.6.0](https://github.com/DaVikingCode/react-components/compare/v1.5.1...v1.6.0) (2021-09-03)
 
 
