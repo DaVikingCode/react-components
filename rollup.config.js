@@ -3,6 +3,8 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
 import del from 'rollup-plugin-delete';
 import svgr from '@svgr/rollup';
+import vue from 'rollup-plugin-vue';
+import commonjs from 'rollup-plugin-commonjs';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
@@ -28,7 +30,9 @@ export default [
             }),
             peerDepsExternal(),
             resolve(),
-            svgr()
+            svgr(),
+            commonjs(),
+            vue(),
         ],
         external: ['lodash']
     },
