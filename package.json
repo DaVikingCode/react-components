@@ -105,5 +105,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/DaVikingCode/react-components.git"
+  },
+  "dependencies": {
+    "rollup": "^2.56.3"
   }
 }
