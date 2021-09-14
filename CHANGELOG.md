@@ -1,3 +1,16 @@
+## [1.6.2](https://github.com/DaVikingCode/react-components/compare/v1.6.1...v1.6.2) (2021-09-14)
+
+
+### Bug Fixes
+
+* revert ([a070df3](https://github.com/DaVikingCode/react-components/commit/a070df3d5e93328e40e74cba2359d6dcecdb2206))
+* rollup ([09b3cc9](https://github.com/DaVikingCode/react-components/commit/09b3cc9783a9914926360640897153089bd4aaf8))
+
+
+### Reverts
+
+* Revert "chore(release): 1.6.1 [skip ci]" ([9d70b85](https://github.com/DaVikingCode/react-components/commit/9d70b8559e0db2bf048ab2487a954dc523697fbd))
+
 # [1.6.0](https://github.com/DaVikingCode/react-components/compare/v1.5.1...v1.6.0) (2021-09-03)
 
 
