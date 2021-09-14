@@ -1,6 +1,6 @@
 {
   "name": "@daviking/components",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./types/index.d.ts",
@@ -105,8 +105,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/DaVikingCode/react-components.git"
-  },
-  "dependencies": {
-    "rollup": "^2.56.3"
   }
 }
