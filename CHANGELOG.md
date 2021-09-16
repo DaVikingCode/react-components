@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/DaVikingCode/react-components/compare/v1.7.0...v1.7.1) (2021-09-16)
+
+
+### Bug Fixes
+
+* upgrade version ([85d6e75](https://github.com/DaVikingCode/react-components/commit/85d6e75aed1cc79edbc15151c0304dda3cc79f3b))
+
 # [1.7.0](https://github.com/DaVikingCode/react-components/compare/v1.6.2...v1.7.0) (2021-09-16)
 
 
