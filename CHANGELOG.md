@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/DaVikingCode/react-components/compare/v1.6.2...v1.7.0) (2021-09-16)
+
+
+### Features
+
+* virtualscroller ([53d6833](https://github.com/DaVikingCode/react-components/commit/53d68334daaee93bda5ac6f08d2cf08ce575be38))
+
 ## [1.6.2](https://github.com/DaVikingCode/react-components/compare/v1.6.1...v1.6.2) (2021-09-14)
 
 
