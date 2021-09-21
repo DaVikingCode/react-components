@@ -1,5 +1,13 @@
 import { debounce } from "lodash";
-import { FC, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  FC,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import ReactDOM from "react-dom";
 
 export interface VirtualScrollerProps {
   data: (...arg: any) => [];
@@ -31,6 +39,7 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
   const numberItem = useRef(0);
   numberItem.current = nbItems;
 
+  //@ts-ignore
   const fctData = useRef((...args: any[]) => {});
   fctData.current = data;
 
@@ -76,19 +85,27 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
     const index =
       minIndex + Math.floor((scrollTop - toleranceHeight) / itemHeight);
     setMargin(index);
+
     const res = new Array(amount);
     for (let i = 0; i < amount; i++) {
       res[i] = Skeleton;
     }
     setRes(res);
+
     debounceGenData(index);
   };
 
   useEffect(() => {
     if (!initialPosition) {
       genData(0);
+    } else {
+      var scrollPos = initialPosition;
+      if (initialPosition > nbItems * 65) {
+        scrollPos = 0;
+      }
+      $(".scroller").scrollTop(scrollPos);
     }
-  });
+  }, [data]);
 
   if (loading) {
     return <>{LoadingSplash}</>;
@@ -101,6 +118,7 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
         overflowY: "auto",
         overflowAnchor: "none",
       }}
+      className="scroller"
     >
       <div style={{ height: topPaddingHeight }} id="becaglacon" />
       {res}
