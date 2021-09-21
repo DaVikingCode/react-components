@@ -1,14 +1,8 @@
 import { debounce } from "lodash";
-import React, {
-  FC,
-  ReactNode,
-  ReactNodeArray,
-  useEffect,
-  useState,
-} from "react";
+import { FC, ReactNode, useCallback, useEffect, useRef, useState } from "react";
 
 export interface VirtualScrollerProps {
-  data: ReactNodeArray;
+  data: (...arg: any) => [];
   loading: boolean;
   itemHeight: number;
   amount: number;
@@ -18,12 +12,14 @@ export interface VirtualScrollerProps {
   startIndex: number;
   LoadingSplash: ReactNode;
   NoResultSplash: ReactNode;
+  Skeleton: ReactNode;
 }
 
 export const VirtualScroll: FC<VirtualScrollerProps> = ({
   loading,
   LoadingSplash,
   NoResultSplash,
+  Skeleton,
   data,
   itemHeight,
   amount,
@@ -32,6 +28,12 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
   nbItems,
   startIndex,
 }) => {
+  const numberItem = useRef(0);
+  numberItem.current = nbItems;
+
+  const fctData = useRef((...args: any[]) => {});
+  fctData.current = data;
+
   const viewportHeight = amount * itemHeight;
   const totalHeight = (nbItems - minIndex + 1) * itemHeight;
   const toleranceHeight = tolerance * itemHeight;
@@ -44,32 +46,49 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
     totalHeight - topPaddingHeight
   );
   const initialPosition = topPaddingHeight + toleranceHeight;
-  const [res, setRes] = useState([]);
+  const [res, setRes]: any[] = useState([]);
 
-  //@ts-ignore
-  const genData = (e) => {
-    const scrollTop = e ? e.target.scrollTop : 0;
-    console.log(scrollTop);
-    if (nbItems !== 0) {
-      const index =
-        minIndex + Math.floor((scrollTop - toleranceHeight) / itemHeight);
-      //@ts-ignore
-      setRes(data(index, bufferedItems, minIndex, nbItems));
-      setTopPaddingHeight(Math.max((index - minIndex) * itemHeight, 0));
-      setBottomPaddingHeight(
-        Math.max(totalHeight - topPaddingHeight - res.length * itemHeight, 0)
+  const setMargin = (index: number) => {
+    setTopPaddingHeight(Math.max((index - minIndex) * itemHeight, 0));
+    setBottomPaddingHeight(
+      Math.max(totalHeight - topPaddingHeight - res.length * itemHeight, 0)
+    );
+  };
+
+  const genData = async (index: number) => {
+    if (numberItem.current !== 0) {
+      setRes(
+        await fctData.current(
+          index,
+          bufferedItems,
+          minIndex,
+          numberItem.current
+        )
       );
     }
   };
 
-  const runScroller = debounce(genData, 50);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debounceGenData = useCallback(debounce(genData, 666), []);
+
+  const runScroller = (e: any) => {
+    const scrollTop = e ? e.target.scrollTop : 0;
+    const index =
+      minIndex + Math.floor((scrollTop - toleranceHeight) / itemHeight);
+    setMargin(index);
+    const res = new Array(amount);
+    for (let i = 0; i < amount; i++) {
+      res[i] = Skeleton;
+    }
+    setRes(res);
+    debounceGenData(index);
+  };
 
   useEffect(() => {
     if (!initialPosition) {
       genData(0);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
+  });
 
   if (loading) {
     return <>{LoadingSplash}</>;
@@ -79,7 +98,7 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
       onScroll={runScroller}
       style={{
         height: viewportHeight,
-        overflowY: "scroll",
+        overflowY: "auto",
         overflowAnchor: "none",
       }}
     >
