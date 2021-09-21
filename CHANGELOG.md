@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/DaVikingCode/react-components/compare/v1.7.1...v1.7.2) (2021-09-21)
+
+
+### Bug Fixes
+
+* repositionning scroll ([67d78fa](https://github.com/DaVikingCode/react-components/commit/67d78fab5c6ab517b48e9441ceca2b7d8b7c0da0))
+
 ## [1.7.1](https://github.com/DaVikingCode/react-components/compare/v1.7.0...v1.7.1) (2021-09-16)
 
 
