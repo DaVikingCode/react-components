@@ -7,7 +7,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import ReactDOM from "react-dom";
 
 export interface VirtualScrollerProps {
   data: (...arg: any) => [];
@@ -86,8 +85,13 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
       minIndex + Math.floor((scrollTop - toleranceHeight) / itemHeight);
     setMargin(index);
 
-    const res = new Array(amount);
-    for (let i = 0; i < amount; i++) {
+    var nbSkeleton = amount;
+    if (amount > nbItems) {
+      nbSkeleton = nbItems;
+    }
+
+    const res = new Array(nbSkeleton);
+    for (let i = 0; i < nbSkeleton; i++) {
       res[i] = Skeleton;
     }
     setRes(res);
