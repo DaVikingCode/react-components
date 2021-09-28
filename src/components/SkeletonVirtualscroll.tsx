@@ -8,7 +8,7 @@ import React, {
   useState,
 } from "react";
 
-export interface VirtualScrollerProps {
+export interface SkeletonVirtualscrollProps {
   data: (...arg: any) => [];
   loading: boolean;
   itemHeight: number;
@@ -22,7 +22,7 @@ export interface VirtualScrollerProps {
   Skeleton: ReactNode;
 }
 
-export const VirtualScroll: FC<VirtualScrollerProps> = ({
+export const SkeletonVirtualscroll: FC<SkeletonVirtualscrollProps> = ({
   loading,
   LoadingSplash,
   NoResultSplash,
@@ -109,6 +109,7 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
       }
       $(".scroller").scrollTop(scrollPos);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   if (loading) {
@@ -133,4 +134,4 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
   );
 };
 
-export default VirtualScroll;
+export default SkeletonVirtualscroll;

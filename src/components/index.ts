@@ -6,4 +6,5 @@ export * from "./Sidebar";
 export * from "./DvcThemeProvider";
 export * from "./SplashHint";
 export * from "./Autocomplete";
-export * from "./VirtualScroller";
+export * from "./Virtualscroll";
+export * from "./SkeletonVirtualscroll";
