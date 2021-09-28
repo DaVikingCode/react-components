@@ -1,9 +1,7 @@
-import { debounce } from "lodash";
 import React, {
   FC,
   ReactNode,
   ReactNodeArray,
-  useCallback,
   useEffect,
   useState,
 } from "react";
@@ -18,7 +16,8 @@ export interface VirtualScrollerProps {
   startIndex: number;
   LoadingSplash: ReactNode;
   NoResultSplash: ReactNode;
-  data: ReactNodeArray;
+  data: any[];
+  template: (...args: any[]) => {};
 }
 
 export const VirtualScroll: FC<VirtualScrollerProps> = ({
@@ -32,6 +31,7 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
   indexMin,
   nbItems,
   startIndex,
+  template,
 }) => {
   const viewportHeight = nbShown * itemHeight;
   const toleranceHeight = tolerance * itemHeight;
@@ -47,16 +47,27 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
   const initialPosition = topPaddingHeight + toleranceHeight;
   const [res, setRes] = useState<ReactNode[]>([]);
 
+  const formateData = (data: any[]) => {
+    const node = new Array<ReactNode>(data.length);
+    for (let i = 0; i < data.length; i++) {
+      node[i] = <li key={i}>{template(data[i])}</li>;
+    }
+    setRes(node);
+  };
+
   const runScroller = (e: any) => {
     const scrollTop = e ? e.target.scrollTop : 0;
     const index = indexMin + Math.floor(scrollTop / itemHeight);
     setTopPaddingHeight(Math.max((index - indexMin) * itemHeight, 0));
     if (data) {
-      setBottomPaddingHeight(
-        Math.max(totalHeight - topPaddingHeight - data.length * itemHeight, 0)
-      );
       const newItems = data.slice(index, index + bufferedItems);
-      setRes(newItems);
+      setBottomPaddingHeight(
+        Math.max(
+          totalHeight - topPaddingHeight - newItems.length * itemHeight,
+          0
+        )
+      );
+      formateData(newItems);
     } else {
       setBottomPaddingHeight(totalHeight);
     }
@@ -64,7 +75,8 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
 
   useEffect(() => {
     if (!initialPosition && data) {
-      setRes(data.slice(0, bufferedItems));
+      formateData(data.slice(0, bufferedItems));
+      setBottomPaddingHeight(totalHeight);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
