@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  ReactNode,
-  ReactNodeArray,
-  useEffect,
-  useState,
-} from "react";
+import React, { FC, ReactNode, useEffect, useState } from "react";
 
 export interface VirtualScrollerProps {
   loading: boolean;
@@ -60,7 +54,13 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
     const index = indexMin + Math.floor(scrollTop / itemHeight);
     setTopPaddingHeight(Math.max((index - indexMin) * itemHeight, 0));
     if (data) {
-      const newItems = data.slice(index, index + bufferedItems);
+      // set the starting index to not slice too far on the data array
+      let startIndex =
+        index > data.length - Math.ceil(nbShown / 2)
+          ? data.length - Math.ceil(nbShown / 2)
+          : index;
+
+      const newItems = data.slice(startIndex, startIndex + bufferedItems);
       setBottomPaddingHeight(
         Math.max(
           totalHeight - topPaddingHeight - newItems.length * itemHeight,
