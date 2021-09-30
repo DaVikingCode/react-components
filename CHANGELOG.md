@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/DaVikingCode/react-components/compare/v1.8.0...v1.8.1) (2021-09-28)
+
+
+### Bug Fixes
+
+* using using virtualscroll with template ([d515624](https://github.com/DaVikingCode/react-components/commit/d515624dff55d0fed3501736fc3da8c2c4a65d32))
+
 # [1.8.0](https://github.com/DaVikingCode/react-components/compare/v1.7.2...v1.8.0) (2021-09-28)
 
 
