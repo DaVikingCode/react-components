@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/DaVikingCode/react-components/compare/v1.8.1...v1.8.2) (2021-09-30)
+
+
+### Bug Fixes
+
+* virtualscroll slicing too far ([033c726](https://github.com/DaVikingCode/react-components/commit/033c7260e5b21178b83a66ebabd099d3601c68ce))
+
 ## [1.8.1](https://github.com/DaVikingCode/react-components/compare/v1.8.0...v1.8.1) (2021-09-28)
 
 
