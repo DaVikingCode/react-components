@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/DaVikingCode/react-components/compare/v1.8.3...v1.8.4) (2021-10-04)
+
+
+### Bug Fixes
+
+* could not load on first render ([bfafa81](https://github.com/DaVikingCode/react-components/commit/bfafa81ea71c07e6351276540adf42f009e3f02d))
+
 ## [1.8.3](https://github.com/DaVikingCode/react-components/compare/v1.8.2...v1.8.3) (2021-10-04)
 
 
