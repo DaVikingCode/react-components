@@ -28,7 +28,6 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
   template,
 }) => {
   const viewportHeight = nbShown * itemHeight;
-  const toleranceHeight = tolerance * itemHeight;
   const bufferedItems = nbShown + 2 * tolerance;
   const itemsAbove = startIndex - tolerance - indexMin;
   const totalHeight = (nbItems - indexMin) * itemHeight;
@@ -38,7 +37,6 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
   const [bottomPaddingHeight, setBottomPaddingHeight] = useState(
     totalHeight - topPaddingHeight - bufferedItems * itemHeight
   );
-  const initialPosition = topPaddingHeight + toleranceHeight;
   const [res, setRes] = useState<ReactNode[]>([]);
 
   const formateData = (data: any[]) => {
@@ -74,7 +72,7 @@ export const VirtualScroll: FC<VirtualScrollerProps> = ({
   };
 
   useEffect(() => {
-    if (!initialPosition && data) {
+    if (data) {
       formateData(data.slice(0, bufferedItems));
       setBottomPaddingHeight(totalHeight);
     }
