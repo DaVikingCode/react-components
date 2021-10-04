@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/DaVikingCode/react-components/compare/v1.8.2...v1.8.3) (2021-10-04)
+
+
+### Bug Fixes
+
+* storybook Virtualscroll ([939077d](https://github.com/DaVikingCode/react-components/commit/939077d3446a7300b23f2cd4b1a20f27d6675e56))
+
 ## [1.8.2](https://github.com/DaVikingCode/react-components/compare/v1.8.1...v1.8.2) (2021-09-30)
 
 
