@@ -8,6 +8,7 @@ const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-left: 16px;
+  min-height: 48px;
 `;
 
 const SidebarWrapper = styled.aside<{ closed: boolean }>`
@@ -44,8 +45,9 @@ export const Sidebar: FC<SidebarProps> = ({
   return (
     <SidebarWrapper closed={!open} {...props}>
       <Header>
-        <Typography variant="overline">{title}</Typography>
         {searchBar}
+        <Divider />
+        <Typography variant="overline">{title}</Typography>
       </Header>
 
       <Divider />
