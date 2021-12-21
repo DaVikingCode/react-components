@@ -1,9 +1,7 @@
 import { mediaQuery } from "../hooks/media-query";
-import { FC } from "react";
-import { Divider, IconButton, Typography } from "@material-ui/core";
+import { FC, ReactNode } from "react";
+import { Divider, Typography } from "@material-ui/core";
 import styled from "styled-components";
-
-import AppIcon from "./AppIcon";
 
 const Header = styled.div`
   display: flex;
@@ -31,12 +29,14 @@ const SidebarWrapper = styled.aside<{ closed: boolean }>`
 export interface SidebarProps {
   open: boolean;
   title: string;
+  searchBar: ReactNode;
   onClose: () => void;
 }
 
 export const Sidebar: FC<SidebarProps> = ({
   children,
   title,
+  searchBar,
   onClose,
   open = false,
   ...props
@@ -45,6 +45,7 @@ export const Sidebar: FC<SidebarProps> = ({
     <SidebarWrapper closed={!open} {...props}>
       <Header>
         <Typography variant="overline">{title}</Typography>
+        {searchBar}
       </Header>
 
       <Divider />
