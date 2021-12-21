@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/DaVikingCode/react-components/compare/v1.8.5...v1.8.6) (2021-12-21)
+
+
+### Bug Fixes
+
+* sidebar -> searchbar not required ([2443999](https://github.com/DaVikingCode/react-components/commit/2443999be718d0456fefb264d3e054c6162a5906))
+
 ## [1.8.5](https://github.com/DaVikingCode/react-components/compare/v1.8.4...v1.8.5) (2021-12-21)
 
 
