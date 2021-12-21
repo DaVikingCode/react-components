@@ -29,7 +29,7 @@ const SidebarWrapper = styled.aside<{ closed: boolean }>`
 export interface SidebarProps {
   open: boolean;
   title: string;
-  searchBar: ReactNode;
+  searchBar?: ReactNode;
   onClose: () => void;
 }
 
