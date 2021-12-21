@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/DaVikingCode/react-components/compare/v1.8.4...v1.8.5) (2021-12-21)
+
+
+### Bug Fixes
+
+* sidebar closing arrow + searchbar ([ce4932a](https://github.com/DaVikingCode/react-components/commit/ce4932aa75ae500f9ba03c9240f33a8069891ff9))
+
 ## [1.8.4](https://github.com/DaVikingCode/react-components/compare/v1.8.3...v1.8.4) (2021-10-04)
 
 
