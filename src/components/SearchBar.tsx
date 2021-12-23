@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 import React, { FC, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { AppIcon } from "./AppIcon";
 
 const SearchInput = styled(InputBase)`
   width: 188px;
