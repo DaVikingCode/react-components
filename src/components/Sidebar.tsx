@@ -1,13 +1,14 @@
 import { mediaQuery } from "../hooks/media-query";
-import { FC, ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 import { Divider, Typography } from "@material-ui/core";
 import styled from "styled-components";
 
 const Header = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: normal;
   justify-content: space-between;
-  padding-left: 16px;
+  padding: 16px;
   min-height: 48px;
 `;
 
@@ -46,8 +47,12 @@ export const Sidebar: FC<SidebarProps> = ({
     <SidebarWrapper closed={!open} {...props}>
       <Header>
         {searchBar}
-        <Divider />
-        <Typography variant="overline">{title}</Typography>
+        {title !== "" && (
+          <>
+            <Divider id="divideSearchBar" />
+            <Typography variant="overline">{title}</Typography>
+          </>
+        )}
       </Header>
 
       <Divider />
