@@ -1,3 +1,10 @@
+## [1.8.11](https://github.com/DaVikingCode/react-components/compare/v1.8.10...v1.8.11) (2021-12-23)
+
+
+### Bug Fixes
+
+* color icon ([1af272c](https://github.com/DaVikingCode/react-components/commit/1af272c1da3d677aa35d153e1bb09dea09f8ec37))
+
 ## [1.8.10](https://github.com/DaVikingCode/react-components/compare/v1.8.9...v1.8.10) (2021-12-23)
 
 
