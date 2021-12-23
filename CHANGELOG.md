@@ -1,3 +1,10 @@
+## [1.8.13](https://github.com/DaVikingCode/react-components/compare/v1.8.12...v1.8.13) (2021-12-23)
+
+
+### Bug Fixes
+
+* M_ sidebar close icon ([60e12bd](https://github.com/DaVikingCode/react-components/commit/60e12bdd3b3489ca431fdc86779184e382ee68f4))
+
 ## [1.8.12](https://github.com/DaVikingCode/react-components/compare/v1.8.11...v1.8.12) (2021-12-23)
 
 
