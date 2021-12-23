@@ -1,3 +1,10 @@
+## [1.8.7](https://github.com/DaVikingCode/react-components/compare/v1.8.6...v1.8.7) (2021-12-21)
+
+
+### Bug Fixes
+
+* sidebar header ([30ef909](https://github.com/DaVikingCode/react-components/commit/30ef909fef36f8cdc4cb6ee72cea10280356614b))
+
 ## [1.8.6](https://github.com/DaVikingCode/react-components/compare/v1.8.5...v1.8.6) (2021-12-21)
 
 
