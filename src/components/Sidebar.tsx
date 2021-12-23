@@ -1,4 +1,4 @@
-import { mediaQuery } from "../hooks/media-query";
+import { mediaQuery, useMediaQuery } from "../hooks/media-query";
 import React, { FC, ReactNode } from "react";
 import { Divider, IconButton, Typography } from "@material-ui/core";
 import styled from "styled-components";
@@ -6,7 +6,6 @@ import { AppIcon } from "./AppIcon";
 
 const Header = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 16px;
@@ -54,7 +53,7 @@ export const Sidebar: FC<SidebarProps> = ({
             <Typography variant="overline">{title}</Typography>
           </>
         )}
-        {mediaQuery("sm") && open && (
+        {useMediaQuery("sm") && open && (
           <IconButton
             style={{ width: "40px", height: "40px" }}
             size="small"
