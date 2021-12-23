@@ -1,3 +1,10 @@
+## [1.8.12](https://github.com/DaVikingCode/react-components/compare/v1.8.11...v1.8.12) (2021-12-23)
+
+
+### Bug Fixes
+
+* color icon searchbar + M_ closing icon sidebar ([033958a](https://github.com/DaVikingCode/react-components/commit/033958afa58c32107cb95128eb79b8647c1faf11))
+
 ## [1.8.11](https://github.com/DaVikingCode/react-components/compare/v1.8.10...v1.8.11) (2021-12-23)
 
 
