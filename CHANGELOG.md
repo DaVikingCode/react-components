@@ -1,3 +1,10 @@
+## [1.8.9](https://github.com/DaVikingCode/react-components/compare/v1.8.8...v1.8.9) (2021-12-23)
+
+
+### Bug Fixes
+
+* autocomplete bg color ([89d58c7](https://github.com/DaVikingCode/react-components/commit/89d58c7773a2e9da999a8775acade4951d5f96f5))
+
 ## [1.8.8](https://github.com/DaVikingCode/react-components/compare/v1.8.7...v1.8.8) (2021-12-23)
 
 
