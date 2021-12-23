@@ -15,6 +15,8 @@ import _ from "lodash";
 import { useRef } from "react";
 
 const BootstrapTextField = styled(TextField)`
+  background-color: #fff;
+
   & > .MuiInputBase-root {
     padding-top: 0;
     padding-bottom: 0;
