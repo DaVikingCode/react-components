@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Header = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: normal;
+  align-items: center;
   justify-content: space-between;
   padding: 16px;
   min-height: 48px;
