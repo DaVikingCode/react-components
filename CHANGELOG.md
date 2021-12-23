@@ -1,3 +1,11 @@
+## [1.8.10](https://github.com/DaVikingCode/react-components/compare/v1.8.9...v1.8.10) (2021-12-23)
+
+
+### Bug Fixes
+
+* searchbar forgotten import ([cc247cf](https://github.com/DaVikingCode/react-components/commit/cc247cff6ce207a84e60b53cde451140f985c909))
+* searchbar/sidebar CSS ([360b165](https://github.com/DaVikingCode/react-components/commit/360b16505d4647677107920c67b3ae3f41a10476))
+
 ## [1.8.9](https://github.com/DaVikingCode/react-components/compare/v1.8.8...v1.8.9) (2021-12-23)
 
 
