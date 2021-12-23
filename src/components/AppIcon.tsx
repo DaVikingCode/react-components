@@ -3,22 +3,22 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 type IconProps = {
-    size?: string;
+  size?: string;
 };
 
 const Icon = styled(MdiIcon)<IconProps>`
-    line-height: 100%;
-    width: ${p => p.size};
-    height: ${p => p.size};
-    font-size: ${p => p.size};
+  line-height: 100%;
+  width: ${(p) => p.size};
+  height: ${(p) => p.size};
+  font-size: ${(p) => p.size};
+  color: rgb(125, 125, 125, 200);
 `;
 
-export const AppIcon: FC<{ name: string } & IconProps & MdiIconProps>
-    = ({ name, className, size = '24px', ...rest }) =>
-        <Icon
-            {...rest}
-            size={size}
-            className={`${className} mdi mdi-${name}`}
-        />;
+export const AppIcon: FC<{ name: string } & IconProps & MdiIconProps> = ({
+  name,
+  className,
+  size = "24px",
+  ...rest
+}) => <Icon {...rest} size={size} className={`${className} mdi mdi-${name}`} />;
 
 export default AppIcon;
