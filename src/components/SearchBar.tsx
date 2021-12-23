@@ -25,7 +25,7 @@ const SearchInput = styled(InputBase)`
 const SearchInputWrapper = styled.div`
   display: flex;
   align-items: center;
-  background: rgba(240, 240, 240, 0.2);
+  background: rgba(225, 225, 225, 0.2);
   color: white;
   width: max-content;
   border-radius: 2px;
@@ -34,7 +34,7 @@ const SearchInputWrapper = styled.div`
   transition: height 75ms ease-in-out;
 
   &:focus-within {
-    background: rgba(240, 240, 240, 0.5);
+    background: rgba(225, 225, 225, 0.5);
     height: 40px;
   }
 `;
