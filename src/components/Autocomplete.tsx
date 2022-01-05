@@ -69,6 +69,7 @@ export interface AutocompleteProps<
   options?: Data[];
   waitingTime?: number;
   renderInput?: (params: AutocompleteRenderInputParams) => React.ReactNode;
+  reverse?: boolean;
 }
 
 type CancellablePromise<T> = Promise<T> & { cancel?: () => void };
@@ -84,6 +85,7 @@ function AutocompleteInner<
     label,
     inputProps,
     waitingTime,
+    reverse,
     ...props
   }: AutocompleteProps<Data, Multiple, DisableClearable, FreeSolo>,
   ref: React.ForwardedRef<unknown>
@@ -123,6 +125,8 @@ function AutocompleteInner<
       promise
         .then((options) => {
           if (options !== undefined && Array.isArray(options)) {
+            if (reverse) options.reverse();
+
             setOptions(options);
             setError(false);
           } else {
