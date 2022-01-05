@@ -125,9 +125,7 @@ function AutocompleteInner<
       promise
         .then((options) => {
           if (options !== undefined && Array.isArray(options)) {
-            if (reverse) options.reverse();
-
-            setOptions(options);
+            setOptions(reverse ? options.reverse() : options);
             setError(false);
           } else {
             setError(true);
