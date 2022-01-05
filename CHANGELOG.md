@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/DaVikingCode/react-components/compare/v1.9.0...v1.9.1) (2022-01-05)
+
+
+### Bug Fixes
+
+* Autocomplete reverse order ([42d2de2](https://github.com/DaVikingCode/react-components/commit/42d2de221f2a56f4e50c997e68ac075b2eb2b0a2))
+
 # [1.9.0](https://github.com/DaVikingCode/react-components/compare/v1.8.13...v1.9.0) (2022-01-05)
 
 
