@@ -1,6 +1,6 @@
 {
   "name": "@daviking/components",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./types/index.d.ts",
@@ -51,6 +51,7 @@
     "@babel/core": "^7.14.6",
     "@material-ui/core": "^4.12.1",
     "@material-ui/lab": "^4.0.0-alpha.60",
+    "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "@semantic-release/changelog": "^5.0.1",
@@ -85,7 +86,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "semantic-release": "^17.4.4",
@@ -104,10 +105,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DaVikingCode/react-components.git"
-  },
-  "dependencies": {
-    "rc-resize-observer": "^1.2.0",
-    "rollup-plugin-commonjs": "10.1.0"
-  }
+    "url": "https://github.com/DaVikingCode/react-components.git" },
+    "dependencies": {
+      "rc-resize-observer": "^1.2.0",
+      "@rollup/plugin-commonjs": "^19.0.0"
+    }
 }
