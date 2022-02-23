@@ -106,5 +106,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/DaVikingCode/react-components.git"
+  },
+  "dependencies": {
+    "rc-resize-observer": "^1.2.0"
   }
 }
