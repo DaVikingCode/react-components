@@ -1,3 +1,11 @@
+## [1.10.1](https://github.com/DaVikingCode/react-components/compare/v1.10.0...v1.10.1) (2022-02-23)
+
+
+### Bug Fixes
+
+* export mapPopup ([20d5077](https://github.com/DaVikingCode/react-components/commit/20d5077f7d1d4e72a3cd83008e6e9cc922985155))
+* WiP map popup del move onResize ([6afc302](https://github.com/DaVikingCode/react-components/commit/6afc3024c2edd92588221320b044a52c19d66118))
+
 # [1.10.0](https://github.com/DaVikingCode/react-components/compare/v1.9.1...v1.10.0) (2022-02-23)
 
 
