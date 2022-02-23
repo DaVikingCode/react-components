@@ -2,7 +2,7 @@ import { Box, Card, CardActions, CardContent, Divider } from "@material-ui/core"
 import React, { FC } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
-// import ResizeObserver, { SizeInfo } from "rc-resize-observer";
+import ResizeObserver, { SizeInfo } from "rc-resize-observer";
 
 const PopupWrapper = styled(Card)<{ $isPhone: boolean }>`
   min-width: 500px;
@@ -64,33 +64,33 @@ const MapPopup: FC<PopupProps> = ({
   overlay,
   element,
 }) => {
-  // const resizer = (size: SizeInfo) => {
-  //   overlay.setOffset([35, -size["height"] / 2]);
-  // };
+  const resizer = (size: SizeInfo) => {
+    overlay.setOffset([35, -size["height"] / 2]);
+  };
 
   return ReactDOM.createPortal(
     isLoading ? (
-      // <ResizeObserver onResize={resizer}>
-      <PopupWrapper $isPhone={isPhone} variant="outlined">
-        <CardContent>{skeleton}</CardContent>
-        <Divider />
-      </PopupWrapper>
+      <ResizeObserver onResize={resizer}>
+        <PopupWrapper $isPhone={isPhone} variant="outlined">
+          <CardContent>{skeleton}</CardContent>
+          <Divider />
+        </PopupWrapper>
+      </ResizeObserver>
     ) : (
-      // </ResizeObserver>
-      // <ResizeObserver onResize={resizer}>
-      <PopupWrapper $isPhone={isPhone} variant="outlined">
-        <CardContent>{header}</CardContent>
-        <Divider />
-        <CardContent>
-          <StyledBox>{content}</StyledBox>
-        </CardContent>
+      <ResizeObserver onResize={resizer}>
+        <PopupWrapper $isPhone={isPhone} variant="outlined">
+          <CardContent>{header}</CardContent>
+          <Divider />
+          <CardContent>
+            <StyledBox>{content}</StyledBox>
+          </CardContent>
 
-        <Divider />
-        <>
-          <CardActions>{footer}</CardActions>
-        </>
-      </PopupWrapper>
-      // </ResizeObserver>
+          <Divider />
+          <>
+            <CardActions>{footer}</CardActions>
+          </>
+        </PopupWrapper>
+      </ResizeObserver>
     ),
     isPhone ? document.body : element
   );
