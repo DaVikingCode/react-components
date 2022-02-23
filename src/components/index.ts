@@ -8,3 +8,4 @@ export * from "./SplashHint";
 export * from "./Autocomplete";
 export * from "./Virtualscroll";
 export * from "./SkeletonVirtualscroll";
+export * from "./MapPopup";
