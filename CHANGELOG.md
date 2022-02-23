@@ -1,33 +1,3 @@
-## [1.10.1](https://github.com/DaVikingCode/react-components/compare/v1.10.0...v1.10.1) (2022-02-23)
-
-
-### Bug Fixes
-
-* export mapPopup ([20d5077](https://github.com/DaVikingCode/react-components/commit/20d5077f7d1d4e72a3cd83008e6e9cc922985155))
-* WiP map popup del move onResize ([6afc302](https://github.com/DaVikingCode/react-components/commit/6afc3024c2edd92588221320b044a52c19d66118))
-
-# [1.10.0](https://github.com/DaVikingCode/react-components/compare/v1.9.1...v1.10.0) (2022-02-23)
-
-
-### Bug Fixes
-
-* adding resize-observer ([dde595d](https://github.com/DaVikingCode/react-components/commit/dde595d0d9302b40e2d50045b089081f5446e77c))
-* map popup ([60bff91](https://github.com/DaVikingCode/react-components/commit/60bff91fa561ce20cd038ded1118a1e19c1a0315))
-* package update ([e2fc771](https://github.com/DaVikingCode/react-components/commit/e2fc7714586c75b26d1431122b3809a2f9f0b695))
-* WiP revert ([e7982ed](https://github.com/DaVikingCode/react-components/commit/e7982edf621de2e982480fc04cf4ab9a8c23bad5))
-
-
-### Features
-
-* map popup ([f2e92f3](https://github.com/DaVikingCode/react-components/commit/f2e92f347467f36d1678b266d2ea5884a782d07e))
-
-## [1.9.1](https://github.com/DaVikingCode/react-components/compare/v1.9.0...v1.9.1) (2022-01-05)
-
-
-### Bug Fixes
-
-* Autocomplete reverse order ([42d2de2](https://github.com/DaVikingCode/react-components/commit/42d2de221f2a56f4e50c997e68ac075b2eb2b0a2))
-
 # [1.9.0](https://github.com/DaVikingCode/react-components/compare/v1.8.13...v1.9.0) (2022-01-05)
 
 
