@@ -40,9 +40,6 @@ const StyledBox = styled(Box)`
   }
 `;
 
-/*
- *   @overlay : type Overlay from ol
- */
 export interface PopupProps {
   isPhone: boolean;
   isLoading: boolean;
