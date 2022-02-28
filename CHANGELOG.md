@@ -1,3 +1,23 @@
+## [1.10.2](https://github.com/DaVikingCode/react-components/compare/v1.10.1...v1.10.2) (2022-02-28)
+
+
+### Bug Fixes
+
+* map popup resizer ([9535864](https://github.com/DaVikingCode/react-components/commit/953586469d5fb95e74c710c2caedbdf9b21ba897))
+* mappopup ([eefed8d](https://github.com/DaVikingCode/react-components/commit/eefed8df8a0c98ddf8486cce92cbe91eeae27adf))
+* rollup commonjs version ([fe12ac6](https://github.com/DaVikingCode/react-components/commit/fe12ac614717db04eb1a3a21065beb377cf8499a))
+* rollup config ([4a56119](https://github.com/DaVikingCode/react-components/commit/4a5611946a8a9e50d620e20cbd9753178b44f87a))
+* rollup plugin commonjs ([b3930f3](https://github.com/DaVikingCode/react-components/commit/b3930f361aa2aef1c64ff69151029ef5b85368c1))
+* rollup plugin version ([9618091](https://github.com/DaVikingCode/react-components/commit/961809179a8b3a252f2c8e2725efcca8cd0fae3b))
+* rollup plugin version again ([eba7eac](https://github.com/DaVikingCode/react-components/commit/eba7eacf4f725ddc970be677f96aa770e04fc438))
+* rollup plugin version v3 ([8764bdd](https://github.com/DaVikingCode/react-components/commit/8764bdd9f9359cdbdef86dbe6ec84659eb3b0a3d))
+* WiP map Popup ([bd9e87d](https://github.com/DaVikingCode/react-components/commit/bd9e87d81cd0d8505e8c7de6b000699febe5cbf1))
+
+
+### Reverts
+
+* Revert "chore(release): 1.9.1 [skip ci]" ([7f4052d](https://github.com/DaVikingCode/react-components/commit/7f4052d75152ee7a99c260919c1b7333eb5beb8c))
+
 # [1.9.0](https://github.com/DaVikingCode/react-components/compare/v1.8.13...v1.9.0) (2022-01-05)
 
 
