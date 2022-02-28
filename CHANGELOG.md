@@ -1,3 +1,10 @@
+## [1.10.6](https://github.com/DaVikingCode/react-components/compare/v1.10.5...v1.10.6) (2022-02-28)
+
+
+### Bug Fixes
+
+* test mappopup forwardref ([e54d353](https://github.com/DaVikingCode/react-components/commit/e54d3533f5e1a738891aa3b5c926c5f4eabf7e06))
+
 ## [1.10.5](https://github.com/DaVikingCode/react-components/compare/v1.10.4...v1.10.5) (2022-02-28)
 
 
