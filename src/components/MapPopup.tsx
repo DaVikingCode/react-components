@@ -4,9 +4,9 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import ResizeObserver, { SizeInfo } from "rc-resize-observer";
 
-const PopupWrapper = styled(Card)<{ $isPhone: boolean }>`
-  min-width: 500px;
-  max-width: 750px;
+const PopupWrapper = styled(Card)<{ $isPhone: boolean; size: number[] }>`
+  min-width: ${(p) => p.size[0]}px;
+  max-width: ${(p) => p.size[1]}px;
   ${(p) =>
     p.$isPhone &&
     `
@@ -49,6 +49,7 @@ export interface PopupProps {
   footer?: React.ReactNode;
   overlay: any;
   element: HTMLElement;
+  sizeMinMax?: number[];
 }
 
 const MapPopup: FC<PopupProps> = ({
@@ -60,6 +61,7 @@ const MapPopup: FC<PopupProps> = ({
   footer,
   overlay,
   element,
+  sizeMinMax = [500, 750],
 }) => {
   const resizer = (size: SizeInfo) => {
     overlay.setOffset([35, -size["height"] / 2]);
@@ -68,14 +70,14 @@ const MapPopup: FC<PopupProps> = ({
   return ReactDOM.createPortal(
     isLoading ? (
       <ResizeObserver onResize={resizer}>
-        <PopupWrapper $isPhone={isPhone} variant="outlined">
+        <PopupWrapper $isPhone={isPhone} variant="outlined" size={sizeMinMax}>
           <CardContent>{skeleton}</CardContent>
           <Divider />
         </PopupWrapper>
       </ResizeObserver>
     ) : (
       <ResizeObserver onResize={resizer}>
-        <PopupWrapper $isPhone={isPhone} variant="outlined">
+        <PopupWrapper $isPhone={isPhone} variant="outlined" size={sizeMinMax}>
           <CardContent>{header}</CardContent>
           <Divider />
           <CardContent>
