@@ -95,4 +95,5 @@ const MapPopup: FC<PopupProps> = ({
   );
 };
 
-export default MapPopup;
+export const PopupMap = React.forwardRef(MapPopup);
+export default PopupMap;
