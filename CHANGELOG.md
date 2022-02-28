@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/DaVikingCode/react-components/compare/v1.10.3...v1.10.4) (2022-02-28)
+
+
+### Bug Fixes
+
+* package ([f55dcda](https://github.com/DaVikingCode/react-components/commit/f55dcda536ea79e5fa3a3978de8f311979df648e))
+
 ## [1.10.3](https://github.com/DaVikingCode/react-components/compare/v1.10.2...v1.10.3) (2022-02-28)
 
 
