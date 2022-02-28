@@ -1,3 +1,10 @@
+## [1.10.5](https://github.com/DaVikingCode/react-components/compare/v1.10.4...v1.10.5) (2022-02-28)
+
+
+### Bug Fixes
+
+* mappopup size ([02a58ca](https://github.com/DaVikingCode/react-components/commit/02a58cad2ce2c9f95fd483e15d1b276245bbde6a))
+
 ## [1.10.4](https://github.com/DaVikingCode/react-components/compare/v1.10.3...v1.10.4) (2022-02-28)
 
 
