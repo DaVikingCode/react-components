@@ -30,7 +30,12 @@ export default [
             peerDepsExternal(),
             resolve(),
             svgr(),
-            commonjs()
+            commonjs({
+                include: 'node_modules/**',
+                namedExports: {
+                    'node_modules/rc-util/node_modules/react-is/index.js': ['isFragment', 'useMemo', 'isMemo']
+                }
+            })
         ],
         external: ['lodash']
     },
