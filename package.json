@@ -86,6 +86,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "rc-resize-observer": "^1.2.0",
+    "rollup": "^2.68.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -108,8 +110,5 @@
     "url": "https://github.com/DaVikingCode/react-components.git"
   },
   "dependencies": {
-    "rc-resize-observer": "^1.2.0",
-    "rollup": "^2.68.0",
-    "@rollup/plugin-commonjs": "^11.1.0"
   }
 }
