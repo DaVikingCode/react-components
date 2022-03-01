@@ -1,3 +1,10 @@
+## [1.10.8](https://github.com/DaVikingCode/react-components/compare/v1.10.7...v1.10.8) (2022-03-01)
+
+
+### Bug Fixes
+
+* mapPopup footer & overflowing content ([881272a](https://github.com/DaVikingCode/react-components/commit/881272a3cfb9b83846af5e4b7d3d73dc95cea5f3))
+
 ## [1.10.7](https://github.com/DaVikingCode/react-components/compare/v1.10.6...v1.10.7) (2022-03-01)
 
 
