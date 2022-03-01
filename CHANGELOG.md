@@ -1,3 +1,10 @@
+## [1.10.7](https://github.com/DaVikingCode/react-components/compare/v1.10.6...v1.10.7) (2022-03-01)
+
+
+### Bug Fixes
+
+* try exporting mapPopup ([fa0f3a7](https://github.com/DaVikingCode/react-components/commit/fa0f3a79d695d1c4b3de43166af31589bc484864))
+
 ## [1.10.6](https://github.com/DaVikingCode/react-components/compare/v1.10.5...v1.10.6) (2022-02-28)
 
 
