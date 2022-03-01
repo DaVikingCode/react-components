@@ -1,3 +1,10 @@
+## [1.10.9](https://github.com/DaVikingCode/react-components/compare/v1.10.8...v1.10.9) (2022-03-01)
+
+
+### Bug Fixes
+
+* dependencies ([76caf28](https://github.com/DaVikingCode/react-components/commit/76caf288a5a7c0d9da9138352675df6874a711f4))
+
 ## [1.10.8](https://github.com/DaVikingCode/react-components/compare/v1.10.7...v1.10.8) (2022-03-01)
 
 
