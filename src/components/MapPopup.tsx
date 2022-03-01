@@ -22,7 +22,7 @@ const PopupWrapper = styled(Card)<{ $isPhone: boolean; size: number[] }>`
   `};
 `;
 
-const StyledBox = styled(Box)`
+const OverflowingContent = styled(CardContent)`
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -79,15 +79,18 @@ export const MapPopup: FC<PopupProps> = ({
       <ResizeObserver onResize={resizer}>
         <PopupWrapper $isPhone={isPhone} variant="outlined" size={sizeMinMax}>
           <CardContent>{header}</CardContent>
-          <Divider />
-          <CardContent>
-            <StyledBox>{content}</StyledBox>
-          </CardContent>
 
           <Divider />
-          <>
-            <CardActions>{footer}</CardActions>
-          </>
+          <OverflowingContent>
+            <Box>{content}</Box>
+          </OverflowingContent>
+
+          {footer && (
+            <>
+              <Divider />
+              <CardActions>{footer}</CardActions>
+            </>
+          )}
         </PopupWrapper>
       </ResizeObserver>
     ),
