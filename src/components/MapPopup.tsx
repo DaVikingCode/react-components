@@ -52,7 +52,7 @@ export interface PopupProps {
   sizeMinMax?: number[];
 }
 
-const MapPopup: FC<PopupProps> = ({
+export const MapPopup: FC<PopupProps> = ({
   isPhone,
   isLoading,
   skeleton,
@@ -94,6 +94,3 @@ const MapPopup: FC<PopupProps> = ({
     isPhone ? document.body : element
   );
 };
-
-export const PopupMap = React.forwardRef(MapPopup);
-export default PopupMap;
