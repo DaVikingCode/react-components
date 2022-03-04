@@ -4,9 +4,9 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import ResizeObserver, { SizeInfo } from "rc-resize-observer";
 
-const PopupWrapper = styled(Card)<{ $isPhone: boolean; size: number[] }>`
-  min-width: ${(p) => p.size[0]}px;
-  max-width: ${(p) => p.size[1]}px;
+const PopupWrapper = styled(Card)<{ $isPhone: boolean; size: string[] }>`
+  min-width: ${(p) => p.size[0]};
+  max-width: ${(p) => p.size[1]};
   ${(p) =>
     p.$isPhone &&
     `
@@ -49,7 +49,7 @@ export interface PopupProps {
   footer?: React.ReactNode;
   overlay: any;
   element: HTMLElement;
-  sizeMinMax?: number[];
+  sizeMinMax?: string[];
 }
 
 export const MapPopup: FC<PopupProps> = ({
@@ -61,7 +61,7 @@ export const MapPopup: FC<PopupProps> = ({
   footer,
   overlay,
   element,
-  sizeMinMax = [500, 750],
+  sizeMinMax = ["500px", "750px"],
 }) => {
   const resizer = (size: SizeInfo) => {
     overlay.setOffset([35, -size["height"] / 2]);
