@@ -1,3 +1,10 @@
+## [1.10.10](https://github.com/DaVikingCode/react-components/compare/v1.10.9...v1.10.10) (2022-03-04)
+
+
+### Bug Fixes
+
+* mapPopup -> size props type ([cc39ed0](https://github.com/DaVikingCode/react-components/commit/cc39ed0081099605b49b093fe480528aa1120fb7))
+
 ## [1.10.9](https://github.com/DaVikingCode/react-components/compare/v1.10.8...v1.10.9) (2022-03-01)
 
 
