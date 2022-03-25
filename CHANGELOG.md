@@ -1,3 +1,10 @@
+## [1.10.11](https://github.com/DaVikingCode/react-components/compare/v1.10.10...v1.10.11) (2022-03-25)
+
+
+### Bug Fixes
+
+* mapPopup footer position ([7c95abc](https://github.com/DaVikingCode/react-components/commit/7c95abcb6c45767b2a9ced6cc1f3a364eec8cb34))
+
 ## [1.10.10](https://github.com/DaVikingCode/react-components/compare/v1.10.9...v1.10.10) (2022-03-04)
 
 
