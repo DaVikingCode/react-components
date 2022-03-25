@@ -1,3 +1,10 @@
+## [1.10.12](https://github.com/DaVikingCode/react-components/compare/v1.10.11...v1.10.12) (2022-03-25)
+
+
+### Bug Fixes
+
+* css mapPopup ([a76fa9f](https://github.com/DaVikingCode/react-components/commit/a76fa9f2c8165ff01f534d7927f68302d8f5d1fb))
+
 ## [1.10.11](https://github.com/DaVikingCode/react-components/compare/v1.10.10...v1.10.11) (2022-03-25)
 
 
