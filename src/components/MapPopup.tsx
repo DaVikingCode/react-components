@@ -40,6 +40,10 @@ const OverflowingContent = styled(CardContent)`
   }
 `;
 
+const StyledCardActions = styled(CardActions)`
+  justify-content: flew-end;
+`;
+
 export interface PopupProps {
   isPhone: boolean;
   isLoading: boolean;
@@ -88,7 +92,7 @@ export const MapPopup: FC<PopupProps> = ({
           {footer && (
             <>
               <Divider />
-              <CardActions>{footer}</CardActions>
+              <StyledCardActions>{footer}</StyledCardActions>
             </>
           )}
         </PopupWrapper>
