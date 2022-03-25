@@ -41,7 +41,7 @@ const OverflowingContent = styled(CardContent)`
 `;
 
 const StyledCardActions = styled(CardActions)`
-  justify-content: flew-end;
+  justify-content: flex-end;
 `;
 
 export interface PopupProps {
