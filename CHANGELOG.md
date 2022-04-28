@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/DaVikingCode/react-components/compare/v1.10.12...v1.11.0) (2022-04-28)
+
+
+### Features
+
+* version ([2511374](https://github.com/DaVikingCode/react-components/commit/25113740928fd1386c4c9522a78ceb0e3c5c0f24))
+
 ## [1.10.12](https://github.com/DaVikingCode/react-components/compare/v1.10.11...v1.10.12) (2022-03-25)
 
 
