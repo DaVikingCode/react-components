@@ -50,6 +50,7 @@ export interface PopupProps {
   skeleton: React.ReactNode;
   header?: React.ReactNode;
   content: React.ReactNode;
+  optionalContent?: React.ReactNode;
   footer?: React.ReactNode;
   overlay: any;
   element: HTMLElement;
@@ -62,6 +63,7 @@ export const MapPopup: FC<PopupProps> = ({
   skeleton,
   header,
   content,
+  optionalContent,
   footer,
   overlay,
   element,
@@ -88,6 +90,15 @@ export const MapPopup: FC<PopupProps> = ({
           <OverflowingContent>
             <Box>{content}</Box>
           </OverflowingContent>
+
+          {optionalContent && (
+            <>
+              <Divider />
+              <OverflowingContent>
+                <Box>{optionalContent}</Box>
+              </OverflowingContent>
+            </>
+          )}
 
           {footer && (
             <>
