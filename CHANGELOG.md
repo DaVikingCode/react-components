@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/DaVikingCode/react-components/compare/v1.11.0...v1.11.1) (2022-05-13)
+
+
+### Bug Fixes
+
+* optionalContent mapPopup ([889631e](https://github.com/DaVikingCode/react-components/commit/889631e35f6fec5531eacce6d80e3e0dbcdebff2))
+
 # [1.11.0](https://github.com/DaVikingCode/react-components/compare/v1.10.12...v1.11.0) (2022-04-28)
 
 
