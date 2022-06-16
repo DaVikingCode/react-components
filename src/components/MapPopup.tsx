@@ -26,6 +26,8 @@ const OverflowingContent = styled(CardContent)`
   overflow-y: auto;
   overflow-x: hidden;
 
+  padding: 8px;
+
   @media (max-height: 600px) {
     max-height: 150px;
   }
