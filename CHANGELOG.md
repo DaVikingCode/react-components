@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/DaVikingCode/react-components/compare/v1.11.1...v1.11.2) (2022-06-16)
+
+
+### Bug Fixes
+
+* padding mappopup content ([7994cb2](https://github.com/DaVikingCode/react-components/commit/7994cb2544a90936bbe890d374b2291725ac04a3))
+
 ## [1.11.1](https://github.com/DaVikingCode/react-components/compare/v1.11.0...v1.11.1) (2022-05-13)
 
 
