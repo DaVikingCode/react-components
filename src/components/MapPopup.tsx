@@ -14,6 +14,8 @@ const PopupWrapper = styled(Card)<{ $isPhone: boolean; size: string[] }>`
       bottom: 0;
       z-index: 1;
       border-radius: 1rem 1rem 0 0;
+      overflow: auto !important;
+      max-height: 25%;
       
       & > div {
           width: 100vw;
