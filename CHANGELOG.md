@@ -1,3 +1,12 @@
+## [1.11.3](https://github.com/DaVikingCode/react-components/compare/v1.11.2...v1.11.3) (2022-07-07)
+
+
+### Bug Fixes
+
+* force version ([7fed6b0](https://github.com/DaVikingCode/react-components/commit/7fed6b03a2a22b6e0d65a624f857a6d7d72da17f))
+* readded package lock ([bfa5897](https://github.com/DaVikingCode/react-components/commit/bfa589722f7ec009c4f538b0e3aca7f25590c467))
+* regenerated package lock + add rollup rule (commonjs) ([e9c6990](https://github.com/DaVikingCode/react-components/commit/e9c69904924efb91a52c4eb366bba65e370a9259))
+
 ## [1.11.2](https://github.com/DaVikingCode/react-components/compare/v1.11.1...v1.11.2) (2022-06-16)
 
 
