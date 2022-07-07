@@ -33,7 +33,8 @@ export default [
             commonjs({
                 include: 'node_modules/**',
                 namedExports: {
-                    'node_modules/rc-util/node_modules/react-is/index.js': ['isFragment', 'useMemo', 'isMemo']
+                    'node_modules/rc-util/node_modules/react-is/index.js': ['isFragment', 'useMemo', 'isMemo'],
+                    'node_modules/react-is/index.js': ['isFragment', 'useMemo', 'isMemo']
                 }
             })
         ],
