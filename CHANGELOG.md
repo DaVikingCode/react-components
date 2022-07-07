@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/DaVikingCode/react-components/compare/v1.11.3...v1.11.4) (2022-07-07)
+
+
+### Bug Fixes
+
+* MapPopup css on mobile ([9031a3c](https://github.com/DaVikingCode/react-components/commit/9031a3c3ff1f74cd3da9ecfbfd3141b09edc6663))
+
 ## [1.11.3](https://github.com/DaVikingCode/react-components/compare/v1.11.2...v1.11.3) (2022-07-07)
 
 
