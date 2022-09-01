@@ -1,4 +1,3 @@
-import { mediaQuery, useMediaQuery } from "../hooks/media-query";
 import React, { FC, ReactNode } from "react";
 import { Divider, IconButton, Typography } from "@material-ui/core";
 import styled from "styled-components";
@@ -12,7 +11,7 @@ const Header = styled.div`
   min-height: 48px;
 `;
 
-const SidebarWrapper = styled.aside<{ closed: boolean }>`
+const SidebarWrapper = styled.aside<{ closed: boolean, isPhone: boolean}>`
   display: flex;
   flex-direction: column;
   z-index: 2;
@@ -20,18 +19,21 @@ const SidebarWrapper = styled.aside<{ closed: boolean }>`
   height: 100%;
   overflow-x: hidden;
   transition: width 125ms ease-in;
-  width: ${(p) => (p.closed ? "0px" : "320px")};
+  ${(p) => { 
+    if (!p.closed) {
+      return p.isPhone ? `width: 100vw;` : `width: 340px;`
+    } else {
+      return `width: 0px;`
+    }
+  }}
   box-shadow: ${(p) => (p.closed ? "" : "1px 0px 4px 1px #bbb")};
-
-  /* Override so the sidebar takes all screen on mobile */
-  ${(p) =>
-    p.closed ? mediaQuery("sm")`width: 0px` : mediaQuery("sm")`width: 100vw`}
 `;
 
 export interface SidebarProps {
   open: boolean;
   title: string;
   searchBar?: ReactNode;
+  isPhone: boolean;
   onClose: () => void;
 }
 
@@ -40,11 +42,12 @@ export const Sidebar: FC<SidebarProps> = ({
   title,
   searchBar,
   onClose,
+  isPhone,
   open = false,
   ...props
 }) => {
   return (
-    <SidebarWrapper closed={!open} {...props}>
+    <SidebarWrapper closed={!open} isPhone={isPhone} {...props}>
       <Header>
         {searchBar}
         {title !== "" && (
@@ -53,7 +56,7 @@ export const Sidebar: FC<SidebarProps> = ({
             <Typography variant="overline">{title}</Typography>
           </>
         )}
-        {useMediaQuery("sm") && open && (
+        {isPhone && open && (
           <IconButton
             style={{ width: "40px", height: "40px" }}
             size="small"
