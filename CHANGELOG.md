@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/DaVikingCode/react-components/compare/v1.11.4...v1.11.5) (2022-09-01)
+
+
+### Bug Fixes
+
+* UseMediaQuery use material ui hook ([bd8e6ae](https://github.com/DaVikingCode/react-components/commit/bd8e6aeb4c41ce77787b8692b1f5f03ac72c6e22))
+
 ## [1.11.4](https://github.com/DaVikingCode/react-components/compare/v1.11.3...v1.11.4) (2022-07-07)
 
 
