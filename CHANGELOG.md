@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/DaVikingCode/react-components/compare/v1.12.0...v1.12.1) (2022-09-07)
+
+
+### Bug Fixes
+
+* Missing import dropzone ([4bc0f60](https://github.com/DaVikingCode/react-components/commit/4bc0f60db9555e8999b9eb99b8e595f30332ab07))
+
 # [1.12.0](https://github.com/DaVikingCode/react-components/compare/v1.11.5...v1.12.0) (2022-09-07)
 
 
