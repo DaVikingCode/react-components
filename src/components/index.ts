@@ -1,5 +1,6 @@
 export * from "./AppIcon";
 export * from "./Autocomplete";
+export * from "./DropZone";
 export * from "./DvcThemeProvider";
 export * from "./LineLoader";
 export * from "./MapButton";
