@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/DaVikingCode/react-components/compare/v1.11.5...v1.12.0) (2022-09-07)
+
+
+### Features
+
+* Force fake release ([d945007](https://github.com/DaVikingCode/react-components/commit/d9450075c8ec2949d1a9554cd742d7d779930736))
+
 ## [1.11.5](https://github.com/DaVikingCode/react-components/compare/v1.11.4...v1.11.5) (2022-09-01)
 
 
