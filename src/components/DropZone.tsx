@@ -27,7 +27,7 @@ export interface DropZoneProps {
   addRemoveLinks? : boolean,
   // autoProcessQueue
   autoProcessQueue? : boolean,
-  // callback api
+  // callback api 
   uploadSuccessCallback?: (files: FileList) => boolean,
   uploadErrorCallback?: (files: FileList, error: string) => boolean,
 }
