@@ -1,7 +1,7 @@
-import Dropzone, { DropzoneDictFileSizeUnits } from "dropzone";
-import React, { FC, useRef, useEffect, useState } from "react";
-import { CircularProgress } from "@material-ui/core";
-import ReactDOM from "react-dom";
+import Dropzone from "dropzone";
+import ReactDOMServer from 'react-dom/server'
+import React, { useRef, useEffect, useState, SyntheticEvent } from "react";
+import { DropZonePreviewTemplate } from "./DropZonePreviewTemplate";
 
 
 export interface DropZoneProps {
@@ -22,53 +22,19 @@ export interface DropZoneProps {
   // maxFilesize
   max_file_size?: number,
   // label
-  label? : string,
+  label?: string,
   // addRemoveLinks
-  addRemoveLinks? : boolean,
+  addRemoveLinks?: boolean,
   // autoProcessQueue
-  autoProcessQueue? : boolean,
+  autoProcessQueue?: boolean,
   // callback api 
   uploadSuccessCallback?: (files: FileList) => boolean,
   uploadErrorCallback?: (files: FileList, error: string) => boolean,
 }
 
 const initialDropzoneParameter = {
-  // method : 'POST',
-  // withCredentials: true,
-  timeout : 600000, // in ms
+  timeout: 600000, // in ms
   parallelUploads: 1,
-  // uploadMultiple: false,
-  // chunking: false,
-  // forceChunking: false,
-  // chunkSize: 4096000, // Bytes
-  // parallelChunkUploads: false,
-  // retryChunks: false,
-  // retryChunksLimit: 3,
-  // paramName: "file", // The name that will be used to transfer the file
-  // createImageThumbnails: true,
-  // maxThumbnailFilesize: 10,
-  // thumbnailWidth: 120,
-  // thumbnailheight: 120,
-  // thumbnailMethod: 'crop',
-  // resizeWidth: null,
-  // resizeHeight: null,
-  // resizeMimeType: null,
-  // resizeQuality: 0.8,
-  // resizeMethod: 'contain',
-  // filesizeBase: 1000,
-  // clickable: true,
-  // ignoreHiddenFiles: true,
-  // autoProcessQueue: true,
-  // autoQueue: true,
-  // addRemoveLinks: true,
-  // previewsContainer: null,
-  // hiddenInputContainer: 'body',
-  // capture: null,
-  // renameFile: null,
-  // forceFallback: true,
-  // dictDefaultMessage: 'Default Message',
-  // dictFallbackMessage: 'Fallback msg',
-  // dictFallbackText: 'Fallback txt',
   dictFileTooBig: 'Fichier trop grand',
   dictInvalidFileType: 'Type de fichier invalide',
   dictResponseError: 'Erreur d\'upload',
@@ -78,21 +44,9 @@ const initialDropzoneParameter = {
   dictRemoveFile: 'Retirer',
   dictRemoveFileConfirmation: 'Retirer ?',
   dictMaxFilesExceeded: 'Nombre maximum de fichiers atteint',
-  dictFileSizeUnits: 'mb' as DropzoneDictFileSizeUnits,
-  params: {},
-  // accept: function(){},
-  // chunksUploaded: function(){},
-  // fallback: function(){},
-  // resize: function(){},
-  // transformFile: function() {},
-  // previewTemplate: ''
+  method: "post",
+  params: {}
 }
-
-const CircularProgressPortaled: FC<{ btnPortalEl?: HTMLElement}> = ({ btnPortalEl }) => {
-  const circle = <CircularProgress style={{ width: "25px", height: "25px", marginLeft: "16px" }} />;
-
-  return btnPortalEl ? ReactDOM.createPortal(circle, btnPortalEl) : circle;
-};
 
 export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
   (
@@ -135,11 +89,14 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       }
     };
 
-    // State of dropzone object
-    const [dropZone, setDropZone] = useState<Dropzone|null>(null);
-    const [isDisabled, setIsDisabled] = useState(true);
-    const [isLoading, setIsLoading] = useState(true);
+    // Fix to not reload page when click on form
+    const onSubmitCallback = (ev: SyntheticEvent) => {
+      ev.preventDefault();
+    };
 
+    // State of dropzone object
+    const [dropZone, setDropZone] = useState<Dropzone | null>(null);
+    const [isDisabled, setIsDisabled] = useState(true);
 
     const dropzoneIndex = dropzone_index;
     const acceptedExtensions = accepted_extensions;
@@ -149,82 +106,129 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 
     // Listeners
     dropZone &&
-    (dropZone as Dropzone).on("addedfiles", (files) => {
-      console.log("addedfiles");
-      console.log(files);
-      if (!autoProcessQueue) {
-        setIsDisabled(false);
-      }
-    }) && 
-    (dropZone as Dropzone).on("processingmultiple", (files) => {
-      console.log("processingmultiple");
-      console.log(files);
-    }) && 
-    (dropZone as Dropzone).on("processing", (file) => {
-      console.log("processing");
-      console.log(file);
-    }) &&
-    (dropZone as Dropzone).on("successmultiple", (files) => {
-      console.log("successmultiple");
-      console.log(files);
-      setIsDisabled(false);
-    }) &&
-    (dropZone as Dropzone).on("success", (files) => {
-      console.log("success");
-      console.log(files);
-      setIsDisabled(false);
-    }) &&
-    (dropZone as Dropzone).on("errormultiple", (files, error) => {
-      console.log("errormultiple");
-      console.log(files, error);
-    }) &&
-    (dropZone as Dropzone).on("error", (file, error) => {
-      console.log("error");
-      console.log(file, error);
+      (dropZone as Dropzone).on("addedfiles", () => {
+        if (!autoProcessQueue) {
+          setIsDisabled(false);
+          // Hide custom progress bar when add files
+          $("#upload_form-" + dropzoneIndex + " .custom-dz-upload").hide();
+        }
+      }) &&
+      (dropZone as Dropzone).on("processing", (file) => {
+        // Hide default progress bar when processing
+        $(file.previewElement).find(".dz-upload").hide();
+        // Show custom progress bar when processing
+        $(file.previewElement).find(".custom-dz-upload").show();
+        $(file.previewElement).find(".dz-progress").css("height", "inherit");
 
-    });
-    
+        // $(window).bind('beforeunload', function () {
+        //   return "Si vous fermez la fenêtre pendant l'importation, vous n'aurez pas de retour d'erreur ou de confirmation de bon déroulement de ce dernier. \nMerci de patienter.";
+        // });
+
+      }) &&
+      (dropZone as Dropzone).on("success", (file) => {
+        // Hide custom progress bar when processing
+        $(file.previewElement).find(".custom-dz-upload").hide();
+        // Override css success mark
+        $(file.previewElement).find(".dz-success-mark").css("animation", "slide-in 3s cubic-bezier(0.77, 0, 0.175, 1)");
+        $(file.previewElement).find(".dz-success-mark").css("opacity", "1");
+
+        if (!autoProcessQueue) {
+          // ManualProcess context : Is there file left to process ?
+          if (dropZone.getQueuedFiles().length > 0) {
+            dropZone.processQueue();
+          } else {
+            setIsDisabled(true);
+          }
+        } else {
+          // AutoProcess context : Refresh button available
+          setIsDisabled(false);
+        }
+
+        $(window).unbind('beforeunload', () => { });
+
+      }) &&
+      (dropZone as Dropzone).on("error", () => {
+        $(window).unbind('beforeunload', () => { });
+      });
+
     // Initialization of DropZone
     useEffect(() => {
 
       if (formRef.current && !dropZone) {
-        setIsLoading(false);
-
         // Fix error dropzone already set 
         Dropzone.autoDiscover = false;
 
         setDropZone(new Dropzone(
           formRef.current,
           {
-            ...dropZoneParameter
+            ...dropZoneParameter,
+            previewTemplate: ReactDOMServer.renderToString(DropZonePreviewTemplate),
+            error: (file: any, message: any) => {
+              if (file.upload && file.upload.uuid && file.previewElement) {
+                file.previewElement.classList.add("dz-error");
+                if (typeof message !== "string" && message.error) {
+                  message = message.error;
+                } else if (typeof message !== "string") {
+                  // Custom error sent by api
+                  var finalMessage = "";
+
+                  // Iterate on each message
+                  if (message.message.length > 0) {
+                    message.message.forEach((currentMessage: any) => {
+                      var errorList = "";
+                      // Iterate on each errors
+                      currentMessage.errors.forEach((errorMessage: string) => { errorList = errorList + errorMessage + " \n" })
+                      // Return result message
+                      finalMessage = finalMessage + errorList;
+                    });
+
+                    message = finalMessage;
+
+                  } else {
+                    message = "Une erreur est surevenue, veuillez vérifier le fichier importé.";
+                  }
+
+                }
+
+                // add span data-dz-errormessage-index
+                const divFileError = $("<div id='dropzone-info' class='alert alert-danger' role='alert' data-dz-errormessage-" + file.upload.uuid + ">" + message + "</div>");
+                $('#dropzone-error-list').append($(divFileError));
+              }
+            }
           }
         ));
       }
     }, [formRef]);
 
     return (
-      <div id="dropzone">
-        {isLoading ? <CircularProgressPortaled/> : <></>}
-        <form 
-          ref={formRef} 
-          action="" 
-          className="dropzone dropzone-form needsclick dz-clickable" 
-          id={`upload_form-${dropzoneIndex}`}>
-          
-          <input type="hidden" name="_token" value={token}/>
+      <div id="dropzone-container">
+        <div id="dropzone-info" className="alert alert-info" role="alert">
+          Si vous fermez la fenêtre pendant l'importation, vous n'aurez pas de retour d'erreur ou de confirmation de bon déroulement de ce dernier.Merci de patienter.
+        </div>
+        <div id="dropzone">
+          <form
+            ref={formRef}
+            action=""
+            className="dropzone dropzone-form needsclick dz-clickable"
+            id={`upload_form-${dropzoneIndex}`}
+            onSubmit={onSubmitCallback}>
 
-          <div className="row text-center">
+            <input type="hidden" name="_token" value={token} />
+
+            <div className="row text-center">
               <div className="col">
                 <button className="btn btn-primary" onClick={processQueue} disabled={isDisabled}>{label}</button>
               </div>
-          </div>
+            </div>
 
-          <div className="dz-message needsclick">
+            <div className="dz-message needsclick">
               <button className="dz-button">Pour uploader des fichiers, cliquez ou déplacez-les ici.</button><br></br>
               <small>Documents au formats {acceptedExtensions}. {dropZoneParameter.maxFiles} fichier(s) maximum {dropZoneParameter.maxFileSize}Mo maximum par fichier.</small>
-          </div>
-
-        </form>
+            </div>
+            {/* <p class="alert alert-danger" role="alert" hidden>Connexion impossible, veuillez réssayer.</p> */}
+            <div id="dropzone-error-list" className="dz-error-message"></div>
+          </form>
+        </div>
       </div>
     );
   }
