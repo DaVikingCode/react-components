@@ -1,3 +1,10 @@
+## [1.12.4](https://github.com/DaVikingCode/react-components/compare/v1.12.3...v1.12.4) (2022-09-12)
+
+
+### Bug Fixes
+
+* show button when generic error ([b5831bb](https://github.com/DaVikingCode/react-components/commit/b5831bb41eba09e1d50801a70a24307e1ad0fdc4))
+
 ## [1.12.3](https://github.com/DaVikingCode/react-components/compare/v1.12.2...v1.12.3) (2022-09-12)
 
 
