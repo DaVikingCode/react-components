@@ -99,7 +99,6 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 
     // State of dropzone object
     const [dropZone, setDropZone] = useState<Dropzone | null>(null);
-    const [isDisabled, setIsDisabled] = useState(true);
     const [isHidden, setIsHidden] = useState(true);
     const [isInfoHidden, setIsInfoHidden] = useState(true);
 
@@ -113,14 +112,11 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
     dropZone &&
       (dropZone as Dropzone).on("addedfiles", () => {
         if (!autoProcessQueue) {
-          setIsDisabled(false);
-          // Clear error list
-          $('#dropzone-error-list').empty();
           // Hide custom progress bar when add files
           $("#upload_form-" + dropzoneIndex + " .custom-dz-upload").hide();
+          setIsHidden(false);
         }
 
-        setIsHidden(false);
       }) &&
       (dropZone as Dropzone).on("processing", (file) => {
         setIsHidden(true);
@@ -144,18 +140,17 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
           if (dropZone.getQueuedFiles().length > 0) {
             dropZone.processQueue();
           } else {
-            setIsDisabled(true);
             setIsInfoHidden(true);
           }
         } else {
           // AutoProcess context : Refresh button available
-          setIsDisabled(false);
           setIsHidden(false);
           setIsInfoHidden(true);
         }
       }) && 
       (dropZone as Dropzone).on("error", () => {
         setIsInfoHidden(true);
+        setIsHidden(true);
       });
 
     // Initialization of DropZone
@@ -227,7 +222,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 
             <div className="row text-center">
               <div className="col">
-                <button className="btn btn-primary" onClick={processQueue} disabled={isDisabled} hidden={isHidden}>{label}</button>
+                <button className="btn btn-primary" onClick={processQueue} hidden={isHidden}>{label}</button>
               </div>
             </div>
 
