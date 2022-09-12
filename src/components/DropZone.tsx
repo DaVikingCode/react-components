@@ -100,6 +100,8 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
     // State of dropzone object
     const [dropZone, setDropZone] = useState<Dropzone | null>(null);
     const [isDisabled, setIsDisabled] = useState(true);
+    const [isHidden, setIsHidden] = useState(true);
+    const [isInfoHidden, setIsInfoHidden] = useState(true);
 
     const dropzoneIndex = dropzone_index;
     const acceptedExtensions = accepted_extensions;
@@ -112,11 +114,17 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       (dropZone as Dropzone).on("addedfiles", () => {
         if (!autoProcessQueue) {
           setIsDisabled(false);
+          // Clear error list
+          $('#dropzone-error-list').empty();
           // Hide custom progress bar when add files
           $("#upload_form-" + dropzoneIndex + " .custom-dz-upload").hide();
         }
+
+        setIsHidden(false);
       }) &&
       (dropZone as Dropzone).on("processing", (file) => {
+        setIsHidden(true);
+        setIsInfoHidden(false);
         // Hide default progress bar when processing
         $(file.previewElement).find(".dz-upload").hide();
         // Show custom progress bar when processing
@@ -137,11 +145,17 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
             dropZone.processQueue();
           } else {
             setIsDisabled(true);
+            setIsInfoHidden(true);
           }
         } else {
           // AutoProcess context : Refresh button available
           setIsDisabled(false);
+          setIsHidden(false);
+          setIsInfoHidden(true);
         }
+      }) && 
+      (dropZone as Dropzone).on("error", () => {
+        setIsInfoHidden(true);
       });
 
     // Initialization of DropZone
@@ -160,23 +174,25 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
               // Code from github "npm dropzone"
               if (file.upload && file.upload.uuid && file.previewElement) {
                 file.previewElement.classList.add("dz-error");
-                if (typeof message !== "string" && message.error) {
-                  message = message.error;
+                if (typeof message !== "string" && (message.error || message.file)) {
+                  message = message.error || message.file;
                 } else if (typeof message !== "string") {
                   // Custom error sent by api
-                  var finalMessage = "";
+                  var finalMessage: string[] = [];
 
                   // CUSTOM : Iterate on each message
                   if (message.message.length > 0) {
                     message.message.forEach((currentMessage: any) => {
-                      var errorList = "";
+                      var errorList: string[] = [];
                       // Iterate on each errors
-                      currentMessage.errors.forEach((errorMessage: string) => { errorList = errorList + errorMessage + " \n " })
+                      currentMessage.errors.forEach((errorMessage: string) => {
+                        errorList.push((currentMessage.row ? "Ligne " + currentMessage.row + " : " : "") + errorMessage + " \n ");
+                      })
                       // Return result message
-                      finalMessage = finalMessage + errorList;
+                      finalMessage = finalMessage.concat(errorList);
                     });
 
-                    message = finalMessage;
+                    message = "<p>" + finalMessage.sort().join("</p><p>") + "</p>";
 
                   } else {
                     message = "Une erreur est surevenue, veuillez vérifier le fichier importé.";
@@ -196,7 +212,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 
     return (
       <div id="dropzone-container">
-        <div id="dropzone-info" className="alert alert-info" role="alert">
+        <div id="dropzone-info" className="alert alert-info" role="alert" hidden={isInfoHidden}>
           Si vous fermez la fenêtre pendant l'importation, vous n'aurez pas de retour d'erreur ou de confirmation de bon déroulement de ce dernier. Merci de patienter.
         </div>
         <div id="dropzone">
@@ -211,7 +227,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 
             <div className="row text-center">
               <div className="col">
-                <button className="btn btn-primary" onClick={processQueue} disabled={isDisabled}>{label}</button>
+                <button className="btn btn-primary" onClick={processQueue} disabled={isDisabled} hidden={isHidden}>{label}</button>
               </div>
             </div>
 
