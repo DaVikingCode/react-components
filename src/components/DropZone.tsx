@@ -78,6 +78,9 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
     };
 
     const processQueue: React.MouseEventHandler<HTMLButtonElement> = () => {
+      // Clear error list
+      $('#dropzone-error-list').empty();
+
       // Dropzone import --> do not redirect, import and then redirect on success/error listener
       if (dropZone && !dropZoneParameter.autoProcessQueue) {
         dropZone.processQueue();
@@ -120,10 +123,6 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
         $(file.previewElement).find(".custom-dz-upload").show();
         $(file.previewElement).find(".dz-progress").css("height", "inherit");
 
-        // $(window).bind('beforeunload', function () {
-        //   return "Si vous fermez la fenêtre pendant l'importation, vous n'aurez pas de retour d'erreur ou de confirmation de bon déroulement de ce dernier. \nMerci de patienter.";
-        // });
-
       }) &&
       (dropZone as Dropzone).on("success", (file) => {
         // Hide custom progress bar when processing
@@ -143,12 +142,6 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
           // AutoProcess context : Refresh button available
           setIsDisabled(false);
         }
-
-        $(window).unbind('beforeunload', () => { });
-
-      }) &&
-      (dropZone as Dropzone).on("error", () => {
-        $(window).unbind('beforeunload', () => { });
       });
 
     // Initialization of DropZone
@@ -164,6 +157,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
             ...dropZoneParameter,
             previewTemplate: ReactDOMServer.renderToString(DropZonePreviewTemplate),
             error: (file: any, message: any) => {
+              // Code from github "npm dropzone"
               if (file.upload && file.upload.uuid && file.previewElement) {
                 file.previewElement.classList.add("dz-error");
                 if (typeof message !== "string" && message.error) {
@@ -172,12 +166,12 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
                   // Custom error sent by api
                   var finalMessage = "";
 
-                  // Iterate on each message
+                  // CUSTOM : Iterate on each message
                   if (message.message.length > 0) {
                     message.message.forEach((currentMessage: any) => {
                       var errorList = "";
                       // Iterate on each errors
-                      currentMessage.errors.forEach((errorMessage: string) => { errorList = errorList + errorMessage + " \n" })
+                      currentMessage.errors.forEach((errorMessage: string) => { errorList = errorList + errorMessage + " \n " })
                       // Return result message
                       finalMessage = finalMessage + errorList;
                     });
@@ -190,7 +184,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 
                 }
 
-                // add span data-dz-errormessage-index
+                // CUSTOM : add span data-dz-errormessage-index
                 const divFileError = $("<div id='dropzone-info' class='alert alert-danger' role='alert' data-dz-errormessage-" + file.upload.uuid + ">" + message + "</div>");
                 $('#dropzone-error-list').append($(divFileError));
               }
@@ -203,7 +197,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
     return (
       <div id="dropzone-container">
         <div id="dropzone-info" className="alert alert-info" role="alert">
-          Si vous fermez la fenêtre pendant l'importation, vous n'aurez pas de retour d'erreur ou de confirmation de bon déroulement de ce dernier.Merci de patienter.
+          Si vous fermez la fenêtre pendant l'importation, vous n'aurez pas de retour d'erreur ou de confirmation de bon déroulement de ce dernier. Merci de patienter.
         </div>
         <div id="dropzone">
           <form
@@ -226,7 +220,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
               <small>Documents au formats {acceptedExtensions}. {dropZoneParameter.maxFiles} fichier(s) maximum {dropZoneParameter.maxFileSize}Mo maximum par fichier.</small>
             </div>
             {/* <p class="alert alert-danger" role="alert" hidden>Connexion impossible, veuillez réssayer.</p> */}
-            <div id="dropzone-error-list" className="dz-error-message"></div>
+            <div id="dropzone-error-list" className="dz-error-message" style={{paddingTop : 0.5 + 'em' }}></div>
           </form>
         </div>
       </div>

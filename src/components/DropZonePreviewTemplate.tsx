@@ -1,7 +1,5 @@
 import React from "react";
 import { LinearProgress } from "@material-ui/core";
-import FailureIcon from "./failure_icon.svg";
-import ValidIcon from "./valid_icon.svg";
 
 export const DropZonePreviewTemplate = (
   <div className="dz-preview dz-file-preview">
