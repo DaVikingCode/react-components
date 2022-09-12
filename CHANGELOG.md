@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/DaVikingCode/react-components/compare/v1.12.1...v1.12.2) (2022-09-12)
+
+
+### Bug Fixes
+
+* fix and comments in dropzone ([080350f](https://github.com/DaVikingCode/react-components/commit/080350fbc2edf70fddac02d0fc19f2605e29e08a))
+
 ## [1.12.1](https://github.com/DaVikingCode/react-components/compare/v1.12.0...v1.12.1) (2022-09-07)
 
 
