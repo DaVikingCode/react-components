@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/DaVikingCode/react-components/compare/v1.12.2...v1.12.3) (2022-09-12)
+
+
+### Bug Fixes
+
+* display message fix ([f640ad1](https://github.com/DaVikingCode/react-components/commit/f640ad1cbaedd94ed6f6db6960dff2ff57230995))
+
 ## [1.12.2](https://github.com/DaVikingCode/react-components/compare/v1.12.1...v1.12.2) (2022-09-12)
 
 
