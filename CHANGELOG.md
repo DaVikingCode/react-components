@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/DaVikingCode/react-components/compare/v1.12.4...v1.13.0) (2022-09-14)
+
+
+### Features
+
+* add custom carousel DVC ([dd2b29f](https://github.com/DaVikingCode/react-components/commit/dd2b29f770f485b4d83d13881242b2e336091cb1))
+
 ## [1.12.4](https://github.com/DaVikingCode/react-components/compare/v1.12.3...v1.12.4) (2022-09-12)
 
 
