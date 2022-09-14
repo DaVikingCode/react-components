@@ -1,3 +1,11 @@
+## [1.13.1](https://github.com/DaVikingCode/react-components/compare/v1.13.0...v1.13.1) (2022-09-14)
+
+
+### Bug Fixes
+
+* Add rollup css config ([e3cbddf](https://github.com/DaVikingCode/react-components/commit/e3cbddffe8fb1355e0f4810e10e0404e5e6a086b))
+* missing import CarouselDVC ([cb79a4a](https://github.com/DaVikingCode/react-components/commit/cb79a4ad3d303fd5323fa0e93168e78b69df65d8))
+
 # [1.13.0](https://github.com/DaVikingCode/react-components/compare/v1.12.4...v1.13.0) (2022-09-14)
 
 
