@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/DaVikingCode/react-components/compare/v1.13.1...v1.13.2) (2022-09-16)
+
+
+### Bug Fixes
+
+* [CarouselDVC] Add some features + fix ([59ac740](https://github.com/DaVikingCode/react-components/commit/59ac740bd1b898e12181e2e48702e631186cd23e))
+
 ## [1.13.1](https://github.com/DaVikingCode/react-components/compare/v1.13.0...v1.13.1) (2022-09-14)
 
 
