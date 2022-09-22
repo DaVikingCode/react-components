@@ -65,6 +65,8 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
     },
     ref
   ) => {
+    Dropzone.autoDiscover = false;
+
     const dropZoneRef = ref;
 
     const dropZoneParameter = {
@@ -115,12 +117,13 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
           // Hide custom progress bar when add files
           $("#upload_form-" + dropzoneIndex + " .custom-dz-upload").hide();
           setIsHidden(false);
+          setIsInfoHidden(true);
         }
 
       }) &&
       (dropZone as Dropzone).on("processing", (file) => {
         setIsHidden(true);
-        setIsInfoHidden(false);
+        setIsInfoHidden(true);
         // Hide default progress bar when processing
         $(file.previewElement).find(".dz-upload").hide();
         // Show custom progress bar when processing
@@ -140,7 +143,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
           if (dropZone.getQueuedFiles().length > 0) {
             dropZone.processQueue();
           } else {
-            setIsInfoHidden(true);
+            setIsInfoHidden(false);
           }
         } else {
           // AutoProcess context : Refresh button available
@@ -157,9 +160,6 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
     useEffect(() => {
 
       if (formRef.current && !dropZone) {
-        // Fix error dropzone already set 
-        Dropzone.autoDiscover = false;
-
         setDropZone(new Dropzone(
           formRef.current,
           {
@@ -208,7 +208,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
     return (
       <div id="dropzone-container">
         <div id="dropzone-info" className="alert alert-info" role="alert" hidden={isInfoHidden}>
-          Si vous fermez la fenêtre pendant l'importation, vous n'aurez pas de retour d'erreur ou de confirmation de bon déroulement de ce dernier. Merci de patienter.
+          L'importation a commencé. Lorsque le traitement sera achevé, nous vous enverrons un mail récapitulatif.
         </div>
         <div id="dropzone">
           <form
