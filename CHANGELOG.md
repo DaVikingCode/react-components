@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/DaVikingCode/react-components/compare/v1.13.2...v1.13.3) (2022-09-22)
+
+
+### Bug Fixes
+
+* [Dropzone] Change info message ([ba78645](https://github.com/DaVikingCode/react-components/commit/ba786452a5d3c87331759ae6d85cd453f0f82364))
+
 ## [1.13.2](https://github.com/DaVikingCode/react-components/compare/v1.13.1...v1.13.2) (2022-09-16)
 
 
