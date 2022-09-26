@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/DaVikingCode/react-components/compare/v1.13.3...v1.13.4) (2022-09-26)
+
+
+### Bug Fixes
+
+* Autocomplete add override classname into inputProps ([43e32ee](https://github.com/DaVikingCode/react-components/commit/43e32ee2e029ac3154ce419a3467ac53627c9932))
+
 ## [1.13.3](https://github.com/DaVikingCode/react-components/compare/v1.13.2...v1.13.3) (2022-09-22)
 
 
