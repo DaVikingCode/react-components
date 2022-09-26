@@ -105,6 +105,7 @@ function AutocompleteInner<
         inputProps={{
           ...inputProps,
           ...params.inputProps,
+          className: `${params.inputProps.hasOwnProperty("className") && inputProps && inputProps.hasOwnProperty("className") ? (params.inputProps as any).className + " " + inputProps.className : (params.inputProps as any).className}`,
         }}
         variant="outlined"
         InputLabelProps={{ shrink: true }}
