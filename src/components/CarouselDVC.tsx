@@ -1,6 +1,6 @@
 //@ts-nocheck
 
-import { FC, useState, useRef } from "react";
+import { FC, useState, useRef, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -50,6 +50,7 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
   var videoListRefs = useRef([]);
   var dataMediaList: any[] | undefined = undefined;
   const [isAutoPlay, setIsAutoPlay] = useState(true); 
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false); 
 
   // Parse media json list
   if (typeof data_media_list_json == 'string') {
@@ -57,7 +58,10 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
   }
 
   const handleVideoEnded = (videoElement) => {
-    if (carouselRef.current != null) {
+    // More than one element
+    if (carouselRef.current != null && carouselRef.current.itemsRef.length > 1 && isPlayingVideo) {
+      setIsPlayingVideo(false);
+
       // Reset video after ended
       $(videoElement.target).get(0).pause();
       $(videoElement.target).get(0).currentTime = 0;
@@ -67,8 +71,41 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
       // Next slide
       $("#arrow-next").trigger("click");
   
+    } else if (carouselRef.current != null && carouselRef.current.itemsRef.length == 1 && isPlayingVideo) {
+      // Exactly one element --> then repeat if it's a video
+
+      // Reset video after ended
+      $(videoElement.target).get(0).pause();
+      $(videoElement.target).get(0).currentTime = 0;
+
+      // Replay
+      $(videoElement.target).get(0).play();
     }
   }
+
+  const handleLoadedData = (videoElement) => {
+    if (carouselRef.current != null && videoElement.target.id === "video-0") {
+      const videoList = $(".selected").find("video");
+
+      for (var video of videoList) {
+        $(video).get(0).play();
+      }
+      setIsPlayingVideo(true);
+    }
+  }
+
+  useEffect(() => {
+    if (carouselRef.current != null) {
+      const videoList = $(".selected").find("video");
+
+      for (var video of videoList) {
+        if (video.id === "video-0")
+          $(video).get(0).play();
+      }
+
+      setIsPlayingVideo(true);
+    }
+  }, carouselRef);
 
   const defaultOnChange = (index: number, item: React.ReactNode) => {
     // Check if sibling element are video ?
@@ -112,8 +149,20 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
       setIsAutoPlay(false);
       const currentVideo = videoListRefs.current.filter(video => video.id === itemVideo[0].props.id);
 
-      // Get video item and then play
-      $(currentVideo).get(0).play();
+      // TODO : If first element is a video ==> 
+      // Play the other video (because first element of a carousel has two videos and catch the event of only one)
+      if (itemVideo[0].props.id === "video-0") {
+        const videoList = $(".selected").find("video");
+
+        for (var video of videoList) {
+          $(video).get(0).play();
+        };
+      } else {
+        // Get video item and then play
+        $(currentVideo).get(0).play();
+      }
+
+      setIsPlayingVideo(true);
 
     } else {
       setIsAutoPlay(true);
@@ -121,7 +170,6 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
 
 
   }
-
   return (
     <Carousel
       ref={carouselRef}
@@ -165,8 +213,10 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
                     className="diapo-container" 
                     src={media.url} 
                     type={media.mime_type} 
-                    preload="none"
-                    muted="muted"/>
+                    preload="auto"
+                    muted="muted"
+                    onLoadeddata={handleLoadedData}
+                  />
                 }
               </div>);
             })
