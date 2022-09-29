@@ -1,3 +1,10 @@
+## [1.13.5](https://github.com/DaVikingCode/react-components/compare/v1.13.4...v1.13.5) (2022-09-29)
+
+
+### Bug Fixes
+
+* [Carousel] Change behabior autoplay with video ([afa9edf](https://github.com/DaVikingCode/react-components/commit/afa9edfce81d36d0295f9a4da969d8b4f47b6741))
+
 ## [1.13.4](https://github.com/DaVikingCode/react-components/compare/v1.13.3...v1.13.4) (2022-09-26)
 
 
