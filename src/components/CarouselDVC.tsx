@@ -180,7 +180,7 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
       useKeyboardArrows={useKeyboardArrows}
       swipeable={swipeable}
       emulateTouch={emulateTouch}
-      autoPlay={autoPlay ? autoPlau : isAutoPlay}
+      autoPlay={autoPlay ? autoPlay : isAutoPlay}
       interval={interval}
       infiniteLoop={infiniteLoop}
       onChange={onChange.length > 0 ? onChange : defaultOnChange}
@@ -213,10 +213,16 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
                     className="diapo-container" 
                     src={media.url} 
                     type={media.mime_type} 
+<<<<<<< Updated upstream
                     preload="auto"
                     muted="muted"
                     onLoadeddata={handleLoadedData}
                   />
+=======
+                    preload="none"
+                    muted="muted"
+                    playsInline/>
+>>>>>>> Stashed changes
                 }
               </div>);
             })
