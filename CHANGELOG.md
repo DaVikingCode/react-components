@@ -1,3 +1,11 @@
+## [1.13.6](https://github.com/DaVikingCode/react-components/compare/v1.13.5...v1.13.6) (2022-10-04)
+
+
+### Bug Fixes
+
+* [CarouselDVC] Fix play video on safari by adding "playsInline" attribute ([cd866db](https://github.com/DaVikingCode/react-components/commit/cd866dba7f81107b82b8b77519de7f8f4337c2ae))
+* git mergeconflict ([69037a6](https://github.com/DaVikingCode/react-components/commit/69037a6d1bf9d2068e57c3d645dafec981c44d37))
+
 ## [1.13.5](https://github.com/DaVikingCode/react-components/compare/v1.13.4...v1.13.5) (2022-09-29)
 
 
