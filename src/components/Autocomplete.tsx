@@ -40,7 +40,6 @@ const BootstrapTextField = styled(TextField)`
 `;
 
 const InputProgress = styled(LinearProgress)`
-  position: absolute;
   bottom: 4px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
