@@ -213,16 +213,11 @@ export const CarouselDVC: FC<CarouselDVCProps> = observer(({
                     className="diapo-container" 
                     src={media.url} 
                     type={media.mime_type} 
-<<<<<<< Updated upstream
                     preload="auto"
                     muted="muted"
                     onLoadeddata={handleLoadedData}
+                    playsInline
                   />
-=======
-                    preload="none"
-                    muted="muted"
-                    playsInline/>
->>>>>>> Stashed changes
                 }
               </div>);
             })
