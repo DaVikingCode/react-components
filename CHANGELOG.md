@@ -1,3 +1,10 @@
+## [1.13.7](https://github.com/DaVikingCode/react-components/compare/v1.13.6...v1.13.7) (2022-10-04)
+
+
+### Bug Fixes
+
+* [Autocomplete] css loading ([8bd2daf](https://github.com/DaVikingCode/react-components/commit/8bd2daf0ae482e0d91b40dec254aae0c798284b1))
+
 ## [1.13.6](https://github.com/DaVikingCode/react-components/compare/v1.13.5...v1.13.6) (2022-10-04)
 
 
