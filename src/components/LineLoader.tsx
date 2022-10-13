@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC, useState } from "react";
 import { LinearProgress, createStyles, withStyles } from "@material-ui/core";
 
 interface LoaderProps {
@@ -9,6 +9,8 @@ const StyledLinear = withStyles(() =>
   createStyles({
     root: {
       marginTop: "-1px",
+      position: "absolute",
+      width: "100%",
       zIndex: 1000,
     },
     colorPrimary: {
@@ -20,14 +22,22 @@ const StyledLinear = withStyles(() =>
   })
 )(LinearProgress);
 
-const LineLoader: FC<LoaderProps> = ({ show }) => {
+export const LineLoader: FC<LoaderProps> = ({ show }) => {
+  const [colorLineProgress, setColorLineProgress] = useState<"primary" | "secondary" | undefined>("primary" );
+  const [variant, setVariant] = useState<"determinate" | "indeterminate" | "buffer" | "query" | undefined>("determinate" )
+
   window.addEventListener("openLoader", () => {
     show(true);
+    setColorLineProgress("primary");
+    setVariant("indeterminate");
+    
   });
   window.addEventListener("closeLoader", () => {
     show(false);
+    setColorLineProgress("secondary");
+    setVariant("determinate");
   });
-  return <StyledLinear />;
+  return <StyledLinear color={colorLineProgress} variant={variant} value={100} />;
 };
 
 export default LineLoader;
