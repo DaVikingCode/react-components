@@ -1,3 +1,10 @@
+## [1.13.8](https://github.com/DaVikingCode/react-components/compare/v1.13.7...v1.13.8) (2022-10-13)
+
+
+### Bug Fixes
+
+* correct export from lineloader ([901811c](https://github.com/DaVikingCode/react-components/commit/901811c1295435fa3e9419055b707bb27e9b6527))
+
 ## [1.13.7](https://github.com/DaVikingCode/react-components/compare/v1.13.6...v1.13.7) (2022-10-04)
 
 
