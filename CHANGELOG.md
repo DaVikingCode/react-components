@@ -1,3 +1,10 @@
+## [1.13.9](https://github.com/DaVikingCode/react-components/compare/v1.13.8...v1.13.9) (2022-10-14)
+
+
+### Bug Fixes
+
+* [SearchBar] Adjust input width to fill space available ([7e6d0c3](https://github.com/DaVikingCode/react-components/commit/7e6d0c37ca80998234b085c7e7caa9482dbf4be7))
+
 ## [1.13.8](https://github.com/DaVikingCode/react-components/compare/v1.13.7...v1.13.8) (2022-10-13)
 
 
