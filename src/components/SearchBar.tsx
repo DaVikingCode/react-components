@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { AppIcon } from "./AppIcon";
 
 const SearchInput = styled(InputBase)`
-  width: 188px;
+  width: 100%;
   transition: width 75ms ease-in-out;
 
   input {
@@ -32,6 +32,7 @@ const SearchInputWrapper = styled.div`
   padding-left: 8px;
   height: 32px;
   transition: height 75ms ease-in-out;
+  width:100%;
 
   &:focus-within {
     background: rgba(225, 225, 225, 0.5);
