@@ -1,3 +1,10 @@
+## [1.13.10](https://github.com/DaVikingCode/react-components/compare/v1.13.9...v1.13.10) (2022-10-19)
+
+
+### Bug Fixes
+
+* resize max-height for map-popup ([e140720](https://github.com/DaVikingCode/react-components/commit/e140720a74d429ce62c442cc6aaaa4115748d9f1))
+
 ## [1.13.9](https://github.com/DaVikingCode/react-components/compare/v1.13.8...v1.13.9) (2022-10-14)
 
 
