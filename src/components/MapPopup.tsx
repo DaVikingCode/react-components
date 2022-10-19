@@ -1,4 +1,10 @@
-import { Box, Card, CardActions, CardContent, Divider } from "@material-ui/core";
+import {
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  Divider,
+} from "@material-ui/core";
 import React, { FC } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
@@ -15,7 +21,6 @@ const PopupWrapper = styled(Card)<{ $isPhone: boolean; size: string[] }>`
       z-index: 1;
       border-radius: 1rem 1rem 0 0;
       overflow: auto !important;
-      max-height: 25%;
       
       & > div {
           width: 100vw;
