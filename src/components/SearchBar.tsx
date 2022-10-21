@@ -42,7 +42,8 @@ const SearchInputWrapper = styled.div`
 
 const FilterDropDown: FC<{
   FilterForm?: React.ReactNode;
-}> = ({ FilterForm, ...props }) => {
+  handleClick?: Function;
+}> = ({ FilterForm, handleClick, ...props }) => {
   const [open, setOpen] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
 
@@ -52,7 +53,10 @@ const FilterDropDown: FC<{
         ref={btnRef}
         size="small"
         style={{ color: "inherit" }}
-        onClick={() => setOpen(true)}
+        onClick={() => {
+			(handleClick && handleClick());
+			setOpen(true)
+		}}
         {...props}
       >
         <AppIcon name="filter-variant" />
@@ -78,10 +82,11 @@ export interface SearchBarProps extends InputBaseProps {
    * The form to use in the filter dropdown
    */
   FilterForm?: React.ReactNode;
+  onClickFilterButton?: Function;
 }
 
 export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
-  ({ onClear, FilterForm, defaultValue, ...props }, ref) => {
+  ({ onClear, FilterForm, defaultValue, onClickFilterButton, ...props }, ref) => {
     const [searchEmpty, setSearchEmpty] = useState(
       () => !defaultValue || defaultValue === ""
     );
@@ -122,7 +127,7 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
           <AppIcon name={searchEmpty ? "magnify" : "close"} />
         </IconButton>
         <Divider orientation="vertical" flexItem />
-        {FilterForm && <FilterDropDown FilterForm={FilterForm} />}
+        {FilterForm && <FilterDropDown FilterForm={FilterForm} handleClick={onClickFilterButton} />}
       </SearchInputWrapper>
     );
   }
