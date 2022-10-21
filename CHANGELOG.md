@@ -1,3 +1,10 @@
+## [1.13.11](https://github.com/DaVikingCode/react-components/compare/v1.13.10...v1.13.11) (2022-10-21)
+
+
+### Bug Fixes
+
+* add handleClickFilterButton to SearchBar Component ([4349d3a](https://github.com/DaVikingCode/react-components/commit/4349d3a1de10c44e975ba0369327a827caaa37c7))
+
 ## [1.13.10](https://github.com/DaVikingCode/react-components/compare/v1.13.9...v1.13.10) (2022-10-19)
 
 
