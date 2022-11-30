@@ -1,3 +1,10 @@
+## [1.13.12](https://github.com/DaVikingCode/react-components/compare/v1.13.11...v1.13.12) (2022-11-30)
+
+
+### Bug Fixes
+
+* [DropZone] Prevent to submit on button click ([09589f4](https://github.com/DaVikingCode/react-components/commit/09589f46c61f64c2f9c0c51dde03299feab0d9f1))
+
 ## [1.13.11](https://github.com/DaVikingCode/react-components/compare/v1.13.10...v1.13.11) (2022-10-21)
 
 
