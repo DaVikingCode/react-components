@@ -227,7 +227,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
             </div>
 
             <div className="dz-message needsclick">
-              <button className="dz-button">Pour uploader des fichiers, cliquez ou déplacez-les ici.</button><br></br>
+              <button type="button" className="dz-button">Pour uploader des fichiers, cliquez ou déplacez-les ici.</button><br></br>
               <small>Documents au formats {acceptedExtensions}. {dropZoneParameter.maxFiles} fichier(s) maximum {dropZoneParameter.maxFileSize}Mo maximum par fichier.</small>
             </div>
             {/* <p class="alert alert-danger" role="alert" hidden>Connexion impossible, veuillez réssayer.</p> */}
