@@ -1,3 +1,10 @@
+## [1.13.14](https://github.com/DaVikingCode/react-components/compare/v1.13.13...v1.13.14) (2022-12-05)
+
+
+### Bug Fixes
+
+* [Dropzone] fix parameter labelHidden ([2a633db](https://github.com/DaVikingCode/react-components/commit/2a633db1350c14527da6980b8bac3e7d0f74f10e))
+
 ## [1.13.13](https://github.com/DaVikingCode/react-components/compare/v1.13.12...v1.13.13) (2022-12-05)
 
 
