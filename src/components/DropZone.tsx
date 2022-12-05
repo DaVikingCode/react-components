@@ -225,7 +225,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 
             <div className="row text-center">
               <div className="col">
-                <button className="btn btn-primary" onClick={processQueue} hidden={isHidden}>{label}</button>
+                <button className="btn btn-primary" onClick={processQueue} hidden={isHidden || hiddenLabel}>{label}</button>
               </div>
             </div>
 
