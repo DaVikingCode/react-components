@@ -1,3 +1,10 @@
+## [1.13.13](https://github.com/DaVikingCode/react-components/compare/v1.13.12...v1.13.13) (2022-12-05)
+
+
+### Bug Fixes
+
+* [DropZone] add hiddenLabel property ([3b8db44](https://github.com/DaVikingCode/react-components/commit/3b8db441842c16f8986730f0b242aab42614ba19))
+
 ## [1.13.12](https://github.com/DaVikingCode/react-components/compare/v1.13.11...v1.13.12) (2022-11-30)
 
 
