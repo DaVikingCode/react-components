@@ -27,6 +27,8 @@ export interface DropZoneProps {
   addRemoveLinks?: boolean,
   // autoProcessQueue
   autoProcessQueue?: boolean,
+  // hiddenLabel
+  hiddenLabel?: boolean,
   // callback api 
   uploadSuccessCallback?: (files: FileList) => boolean,
   uploadErrorCallback?: (files: FileList, error: string) => boolean,
@@ -61,7 +63,8 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       max_file_size,
       label = "Terminé",
       addRemoveLinks = false,
-      autoProcessQueue = true
+      autoProcessQueue = true,
+	  hiddenLabel = false
     },
     ref
   ) => {
