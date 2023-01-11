@@ -32,6 +32,7 @@ export interface DropZoneProps {
   // callback api 
   uploadSuccessCallback?: (files: FileList) => boolean,
   uploadErrorCallback?: (files: FileList, error: string) => boolean,
+  dropzoneParams: any
 }
 
 const initialDropzoneParameter = {
@@ -64,7 +65,8 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       label = "Terminé",
       addRemoveLinks = false,
       autoProcessQueue = true,
-	  hiddenLabel = false
+	  hiddenLabel = false,
+	  dropzoneParams = {},
     },
     ref
   ) => {
@@ -79,7 +81,8 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       acceptedFiles: accepted_files,
       maxFiles: max_files,
       maxFileSize: max_file_size,
-      url: url
+      url: url,
+	  params: dropzoneParams
     };
 
     const processQueue: React.MouseEventHandler<HTMLButtonElement> = () => {
