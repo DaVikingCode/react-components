@@ -1,3 +1,10 @@
+## [1.13.15](https://github.com/DaVikingCode/react-components/compare/v1.13.14...v1.13.15) (2023-01-11)
+
+
+### Bug Fixes
+
+* [Dropzone] add param for url ([81c55be](https://github.com/DaVikingCode/react-components/commit/81c55be2fd69900197d684b1679958de6866558e))
+
 ## [1.13.14](https://github.com/DaVikingCode/react-components/compare/v1.13.13...v1.13.14) (2022-12-05)
 
 
