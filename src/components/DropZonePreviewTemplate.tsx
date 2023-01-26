@@ -12,7 +12,7 @@ export const DropZonePreviewTemplate = (
       <span className="dz-upload"></span>
       <span className="custom-dz-upload"><LinearProgress style={{ height: '0.3em' }} /></span>
     </div>
-    <div className="dz-success-mark" style={{ top: 5 + '%', left: 105 + '%' }}>
+    <div className="dz-success-mark" style={{ left: 60 + '%' }}>
       <svg style={{ width: 30 + 'px' }} width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <path
@@ -21,7 +21,7 @@ export const DropZonePreviewTemplate = (
         </g>
       </svg>
     </div>
-    <div className="dz-error-mark" style={{ top: 5 + '%', left: 105 + '%' }}>
+    <div className="dz-error-mark" style={{ left: 60 + '%' }}>
       <svg style={{ width: 30 + 'px' }} width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g stroke="#747474" stroke-opacity="0.198794158" fill="#b90000" fill-opacity="0.816519475">
