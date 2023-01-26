@@ -1,3 +1,10 @@
+## [1.13.16](https://github.com/DaVikingCode/react-components/compare/v1.13.15...v1.13.16) (2023-01-26)
+
+
+### Bug Fixes
+
+* [DropZonePreviewTemplate] Fix css success/fail mark ([a48a68f](https://github.com/DaVikingCode/react-components/commit/a48a68f97f41fcd22b40a0c84bd043ec4df14203))
+
 ## [1.13.15](https://github.com/DaVikingCode/react-components/compare/v1.13.14...v1.13.15) (2023-01-11)
 
 
