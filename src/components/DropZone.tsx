@@ -21,6 +21,10 @@ export interface DropZoneProps {
   max_files?: number,
   // maxFilesize
   max_file_size?: number,
+  // chunking
+  chunking?: string,
+  // chunkSize
+  chunkSize?: number,
   // label
   label?: string,
   // addRemoveLinks
@@ -66,7 +70,9 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       addRemoveLinks = false,
       autoProcessQueue = true,
 	  hiddenLabel = false,
-	  dropzoneParams = {},
+	  chunking = "0",
+	  chunkSize = 2000000,
+	  dropzoneParams = {}
     },
     ref
   ) => {
@@ -80,9 +86,12 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       autoProcessQueue,
       acceptedFiles: accepted_files,
       maxFiles: max_files,
-      maxFileSize: max_file_size,
+      maxFilesize: max_file_size,
+	  chunking : chunking == "1" ?? false,
+	  chunkSize,
+	  retryChunks: true,
       url: url,
-	  params: dropzoneParams
+	  params: {...dropzoneParams}
     };
 
     const processQueue: React.MouseEventHandler<HTMLButtonElement> = () => {
@@ -234,7 +243,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 
             <div className="dz-message needsclick">
               <button type="button" className="dz-button">Pour uploader des fichiers, cliquez ou déplacez-les ici.</button><br></br>
-              <small>Documents au formats {acceptedExtensions}. {dropZoneParameter.maxFiles} fichier(s) maximum {dropZoneParameter.maxFileSize}Mo maximum par fichier.</small>
+              <small>Documents au formats {acceptedExtensions}. {dropZoneParameter.maxFiles} fichier(s) maximum {dropZoneParameter.maxFilesize}Mo maximum par fichier.</small>
             </div>
             {/* <p class="alert alert-danger" role="alert" hidden>Connexion impossible, veuillez réssayer.</p> */}
             <div id="dropzone-error-list" className="dz-error-message" style={{paddingTop : 0.5 + 'em' }}></div>
