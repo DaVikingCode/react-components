@@ -1,3 +1,10 @@
+## [1.13.17](https://github.com/DaVikingCode/react-components/compare/v1.13.16...v1.13.17) (2023-04-12)
+
+
+### Bug Fixes
+
+* add chunk parameter ([3bc40db](https://github.com/DaVikingCode/react-components/commit/3bc40dbbea9d2043d9990c9cbb0969dcf93fe774))
+
 ## [1.13.16](https://github.com/DaVikingCode/react-components/compare/v1.13.15...v1.13.16) (2023-01-26)
 
 
