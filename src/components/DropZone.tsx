@@ -24,7 +24,7 @@ export interface DropZoneProps {
   // chunking
   chunking?: string,
   // chunkSize
-  chunkSize?: number,
+  chunkSize?: string,
   // label
   label?: string,
   // addRemoveLinks
@@ -71,7 +71,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       autoProcessQueue = true,
 	  hiddenLabel = false,
 	  chunking = "0",
-	  chunkSize = 2000000,
+	  chunkSize = "2000000",
 	  dropzoneParams = {}
     },
     ref
@@ -88,7 +88,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       maxFiles: max_files,
       maxFilesize: max_file_size,
 	  chunking : chunking == "1" ?? false,
-	  chunkSize,
+	  chunkSize : chunkSize != "" ? Number.parseInt(chunkSize) : 2000000,
 	  retryChunks: true,
       url: url,
 	  params: {...dropzoneParams}
@@ -169,7 +169,31 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
       (dropZone as Dropzone).on("error", () => {
         setIsInfoHidden(true);
         setIsHidden(true);
-      });
+      }) && 
+	  (dropZone as Dropzone).on("sending", (file: any, xhr, formData) => {
+  
+		console.log(file, xhr, formData);
+
+		if (dropZoneParameter.chunking) {
+			formData.append('dzuuid', file.upload?.uuid);
+			formData.append('dztotalchunkcount', file.upload?.totalChunkCount);
+
+			let index = 1;
+			// @ts-nocheck
+			if(file.upload?.chunks)
+			{
+			  index = file.upload.chunks[file.upload.chunks.length - 1].index
+			}
+			
+			formData.append('dzchunkindex', index.toString());
+			formData.append('dztotalfilesize', file.size );
+			formData.append('dzchunksize', dropZoneParameter.chunkSize.toString());
+		}
+	  }) && 
+	  (dropZone as Dropzone).on("chunksUploaded", (file, done) => {
+		console.log(file);
+		done();
+	  });
 
     // Initialization of DropZone
     useEffect(() => {
