@@ -1,3 +1,10 @@
+## [1.13.18](https://github.com/DaVikingCode/react-components/compare/v1.13.17...v1.13.18) (2023-04-12)
+
+
+### Bug Fixes
+
+* add chunk method ([ecd12c6](https://github.com/DaVikingCode/react-components/commit/ecd12c63de36f1a20aafa53401f53f978a197d93))
+
 ## [1.13.17](https://github.com/DaVikingCode/react-components/compare/v1.13.16...v1.13.17) (2023-04-12)
 
 
