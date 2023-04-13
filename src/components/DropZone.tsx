@@ -37,7 +37,7 @@ export interface DropZoneProps {
   uploadSuccessCallback?: (files: FileList) => boolean,
   uploadErrorCallback?: (files: FileList, error: string) => boolean,
   addCallBack? : () => void,
-  dropzoneParams: any
+  dropzoneParams: Map<string, any>
 }
 
 const initialDropzoneParameter = {
@@ -92,8 +92,7 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 	  chunking : chunking == "1" ?? false,
 	  chunkSize : chunkSize != "" ? Number.parseInt(chunkSize) : 2000000,
 	  retryChunks: true,
-      url: url,
-	  params: {...dropzoneParams}
+      url: url
     };
 
     const processQueue: React.MouseEventHandler<HTMLButtonElement> = () => {
@@ -228,6 +227,12 @@ export const DropZone = React.forwardRef<HTMLFormElement, DropZoneProps>(
 					formData.append('dzchunkindex', index.toString());
 					formData.append('dztotalfilesize', file.size );
 					formData.append('dzchunksize', dropZoneParameter.chunkSize.toString());
+				}
+
+				if(dropzoneParams) {
+					for (const [key, value] of Object.entries(dropzoneParams)) {
+						formData.append(key, value)
+					}
 				}
 			}
 
