@@ -1,3 +1,10 @@
+## [1.13.19](https://github.com/DaVikingCode/react-components/compare/v1.13.18...v1.13.19) (2023-04-13)
+
+
+### Bug Fixes
+
+* Dropzone add callback method ([26a5191](https://github.com/DaVikingCode/react-components/commit/26a51918482ec9d311cd2be52671ece561871d7f))
+
 ## [1.13.18](https://github.com/DaVikingCode/react-components/compare/v1.13.17...v1.13.18) (2023-04-12)
 
 
