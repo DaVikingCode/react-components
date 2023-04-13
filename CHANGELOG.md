@@ -1,3 +1,10 @@
+## [1.13.20](https://github.com/DaVikingCode/react-components/compare/v1.13.19...v1.13.20) (2023-04-13)
+
+
+### Bug Fixes
+
+* Dropzone: fix add custom params when sending ([1aa341d](https://github.com/DaVikingCode/react-components/commit/1aa341df776bcbd99944c8b8ee728c042b23c1c8))
+
 ## [1.13.19](https://github.com/DaVikingCode/react-components/compare/v1.13.18...v1.13.19) (2023-04-13)
 
 
