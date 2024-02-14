@@ -98,6 +98,7 @@
 		"dropzone": "^6.0.0-beta.2",
 		"rc-resize-observer": "^1.2.0",
 		"react-responsive-carousel": "^3.2.23",
-		"rollup-plugin-import-css": "^3.0.3"
+		"rollup-plugin-import-css": "^3.0.3",
+		"tslib": "^2.6.2"
 	}
 }
