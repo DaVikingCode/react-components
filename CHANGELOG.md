@@ -1,3 +1,11 @@
+## [1.13.21](https://github.com/DaVikingCode/react-components/compare/v1.13.20...v1.13.21) (2024-02-14)
+
+
+### Bug Fixes
+
+* add tslib package ([bd6d684](https://github.com/DaVikingCode/react-components/commit/bd6d684c326d573a5abc77e3810f92ec1128fdb7))
+* delete deploy gh action + remove react-scripts / storybook ([77fb069](https://github.com/DaVikingCode/react-components/commit/77fb0691f12cff72db3ccf2bbb27c331c1aa2702))
+
 ## [1.13.20](https://github.com/DaVikingCode/react-components/compare/v1.13.19...v1.13.20) (2023-04-13)
 
 
