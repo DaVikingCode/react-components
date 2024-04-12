@@ -1,3 +1,10 @@
+## [1.13.22](https://github.com/DaVikingCode/react-components/compare/v1.13.21...v1.13.22) (2024-04-12)
+
+
+### Bug Fixes
+
+* lineloader -> set show methods as nullable ([7959ec7](https://github.com/DaVikingCode/react-components/commit/7959ec77284764f7f919551fd545315395ca4365))
+
 ## [1.13.21](https://github.com/DaVikingCode/react-components/compare/v1.13.20...v1.13.21) (2024-02-14)
 
 
