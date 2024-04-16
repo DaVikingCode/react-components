@@ -1,3 +1,10 @@
+## [1.13.23](https://github.com/DaVikingCode/react-components/compare/v1.13.22...v1.13.23) (2024-04-16)
+
+
+### Bug Fixes
+
+* change display absolute to fixed for LineLoader ([e756890](https://github.com/DaVikingCode/react-components/commit/e756890672a0546df81c50b54a8c83b552584376))
+
 ## [1.13.22](https://github.com/DaVikingCode/react-components/compare/v1.13.21...v1.13.22) (2024-04-12)
 
 
