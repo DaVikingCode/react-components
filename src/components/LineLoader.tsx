@@ -9,7 +9,7 @@ const StyledLinear = withStyles(() =>
 	createStyles({
 		root: {
 			marginTop: "-1px",
-			position: "absolute",
+			position: "fixed",
 			width: "100%",
 			zIndex: 1000,
 		},
