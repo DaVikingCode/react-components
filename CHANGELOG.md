@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/DaVikingCode/react-components/compare/v1.13.23...v1.14.0) (2024-06-13)
+
+
+### Features
+
+* add badge count on filter button (in searchbar) ([1acd3fe](https://github.com/DaVikingCode/react-components/commit/1acd3fe7547612172fd098fb34ca3f1d9c6285c6))
+
 ## [1.13.23](https://github.com/DaVikingCode/react-components/compare/v1.13.22...v1.13.23) (2024-04-16)
 
 
