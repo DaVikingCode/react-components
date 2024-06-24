@@ -23,6 +23,16 @@ const SearchInput = styled(InputBase)`
 	}
 `;
 
+const CustomBadge = styled(Badge)`
+	& > .MuiBadge-colorSecondary {
+		color: white;
+	}
+
+	& > .MuiBadge-badge {
+		font-weight: bold;
+	}
+`;
+
 const SearchInputWrapper = styled.div`
 	display: flex;
 	align-items: center;
@@ -121,7 +131,7 @@ export const SearchBar = React.forwardRef<
 		}, [ref]);
 
 		return (
-			<Badge
+			<CustomBadge
 				color="secondary"
 				invisible={!store.dirty}
 				badgeContent={store.dirtyByNumber}
@@ -152,7 +162,7 @@ export const SearchBar = React.forwardRef<
 						</>
 					)}
 				</SearchInputWrapper>
-			</Badge>
+			</CustomBadge>
 		);
 	}
 );
