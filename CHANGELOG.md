@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/DaVikingCode/react-components/compare/v1.14.0...v1.14.1) (2024-06-24)
+
+
+### Bug Fixes
+
+* edit min height for sidebar ([df73a13](https://github.com/DaVikingCode/react-components/commit/df73a13e91207ab36210b3e26423c93a68d6edd4))
+
 # [1.14.0](https://github.com/DaVikingCode/react-components/compare/v1.13.23...v1.14.0) (2024-06-13)
 
 

@@ -1,6 +1,6 @@
 {
 	"name": "@daviking/components",
-	"version": "1.14.0",
+	"version": "1.14.1",
 	"main": "./lib/cjs/index.js",
 	"module": "./lib/esm/index.js",
 	"types": "./types/index.d.ts",
