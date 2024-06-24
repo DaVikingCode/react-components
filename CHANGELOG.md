@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/DaVikingCode/react-components/compare/v1.14.1...v1.14.2) (2024-06-24)
+
+
+### Bug Fixes
+
+* wrong commit (see last one) ([8439571](https://github.com/DaVikingCode/react-components/commit/8439571a735d3f0fd928f46c4878d0452a3cec46))
+
 ## [1.14.1](https://github.com/DaVikingCode/react-components/compare/v1.14.0...v1.14.1) (2024-06-24)
 
 
